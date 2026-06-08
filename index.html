@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan Mohd. Hussain — Portfolio</title>
+    <script>
+        (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.dataset.theme=t;})();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo"><span class="logo-bracket">[</span>HMH<span class="logo-bracket">]</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="icon-light" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="icon-dark" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero" id="home">
+    <canvas id="neuralCanvas"></canvas>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="badge-dot"></span>
+                <span class="hero-label-text">available_for_hire · f1_stem_opt</span>
+            </div>
+            <h1 class="hero-title">Hasan<br><span class="gradient-text">Mohd. Hussain</span></h1>
+            <p class="hero-sub-title">Machine Learning Engineer | LLM &amp; Generative AI Systems</p>
+            <p class="hero-typing"><span id="typingText"></span><span class="cursor">|</span></p>
+            <p class="hero-desc">ML Engineer and CS grad student at UT Dallas. I build agentic AI systems, RAG pipelines, and production-ready LLM applications using LangChain, LangGraph, and PyTorch.</p>
+            <div class="hero-cta">
+                <a href="Hasan - ML_10 Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Resume
+                </a>
+                <a href="https://www.linkedin.com/in/hasan-m-4b1bba315/" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/striderzz" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub
+                </a>
+                <a href="#contact" class="btn btn-secondary">Contact</a>
+            </div>
+        </div>
+        <div class="hero-photo-wrap">
+            <img src="assets/profile.jpg" alt="Hasan Mohd. Hussain" class="hero-photo">
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>scroll</span>
+        <span class="scroll-arrow"></span>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 01_about</span>
+            <h2 class="section-title">About</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>I'm a <strong>Machine Learning Engineer</strong> and CS grad student at UT Dallas with hands-on experience building agentic AI systems, LLM applications, and RAG pipelines. My work sits at the intersection of AI/ML research and production engineering.</p>
+                <p>I've worked at <strong>Mphasis</strong> building embedding pipelines with Azure OpenAI and ChromaDB, and at two Mumbai game studios shipping Unity games with C#. I care about systems that actually work in production — not just notebooks.</p>
+                <p>When I'm not training models or architecting agents, I'm building games in Unity or exploring how LLMs can be made more reliable and grounded through better retrieval.</p>
+                <div class="about-stats">
+                    <div>
+                        <div class="stat-number gradient-text">3</div>
+                        <div class="stat-label">Internships</div>
+                    </div>
+                    <div>
+                        <div class="stat-number gradient-text">15+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div>
+                        <div class="stat-number gradient-text">5+</div>
+                        <div class="stat-label">Certs</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-k">location</span>
+                    <span class="info-v">Dallas, TX</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-k">university</span>
+                    <span class="info-v">UT Dallas</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-k">degree</span>
+                    <span class="info-v">M.S. Computer Eng.</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-k">visa</span>
+                    <span class="info-v">F-1 STEM OPT</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-k">status</span>
+                    <span class="info-v"><span class="status-badge">open_to_work</span></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-k">email</span>
+                    <span class="info-v">hasan16017@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
+<section class="section experience" id="experience">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 02_experience</span>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="exp-list">
+
+            <div class="exp-item reveal">
+                <div class="exp-date">
+                    May 2025<br>— Aug 2025
+                    <span class="exp-loc">New York, US</span>
+                </div>
+                <div>
+                    <div class="exp-company">Mphasis</div>
+                    <div class="exp-role">machine_learning_engineer_intern</div>
+                    <ul class="exp-bullets">
+                        <li>Implemented <strong>text embedding pipelines</strong> using Azure OpenAI and integrated ChromaDB vector databases, optimizing retrieval performance by <strong>30%</strong> for LLM-based RAG workflows.</li>
+                        <li>Developed Python backend logic for full-stack applications, improving <strong>API response performance by 20%</strong>.</li>
+                        <li>Built and deployed services with <strong>FastAPI, Docker, AWS, LangChain, Azure OpenAI, and Google Gemini APIs</strong>.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">Azure OpenAI</span><span class="tag">ChromaDB</span><span class="tag">LangChain</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">Gemini</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item reveal">
+                <div class="exp-date">
+                    Apr 2024<br>— Aug 2024
+                    <span class="exp-loc">Mumbai, India</span>
+                </div>
+                <div>
+                    <div class="exp-company">Dot9 Games</div>
+                    <div class="exp-role">game_developer_intern</div>
+                    <ul class="exp-bullets">
+                        <li>Implemented <strong>gameplay features in C# and Unity</strong>, translating design specs into functional interactive systems.</li>
+                        <li>Collaborated with developers, artists, and designers in <strong>Agile/Scrum workflows</strong> using Git for iterative development.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Git</span><span class="tag">Agile</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item reveal">
+                <div class="exp-date">
+                    Nov 2022<br>— Mar 2023
+                    <span class="exp-loc">Mumbai, India</span>
+                </div>
+                <div>
+                    <div class="exp-company">Nilee Games</div>
+                    <div class="exp-role">game_developer_intern</div>
+                    <ul class="exp-bullets">
+                        <li>Developed a <strong>2D physics-based game prototype</strong> in Unity using C#, delivered within a two-week sprint.</li>
+                        <li>Applied engineering practices — debugging, iteration, team collaboration — to improve <strong>gameplay systems and user engagement</strong>.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics2D</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ EDUCATION ═══════════════════════════════ -->
+<section class="section education" id="education">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 03_education</span>
+            <h2 class="section-title">Education</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="edu-list">
+            <div class="edu-item reveal">
+                <div>
+                    <div class="edu-school">University of Texas at Dallas</div>
+                    <div class="edu-degree">M.S. Computer Engineering</div>
+                    <div class="edu-courses">DSA · Computer Architecture · Embedded Systems · Database Design · Machine Learning · NLP</div>
+                </div>
+                <div class="edu-meta">
+                    <span class="edu-period">Aug 2024 — Jun 2026 (Expected)</span>
+                    <span class="edu-gpa">GPA 3.75 / 4.0</span>
+                </div>
+            </div>
+            <div class="edu-item reveal">
+                <div>
+                    <div class="edu-school">University of Mumbai</div>
+                    <div class="edu-degree">B.E. Computer Engineering</div>
+                    <div class="edu-courses">DBMS · Data Structures · Machine Learning · NLP · Operating Systems</div>
+                </div>
+                <div class="edu-meta">
+                    <span class="edu-period">Aug 2017 — Jul 2021</span>
+                    <span class="edu-gpa">GPA 7.88 / 10.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
+<section class="section skills" id="skills">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 04_skills</span>
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="skills-grid">
+
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">ai_and_ml</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Deep Learning</span><span class="skill-tag">Transformers</span><span class="skill-tag">RAG</span><span class="skill-tag">AI Agents</span><span class="skill-tag">Embeddings</span><span class="skill-tag">Fine-Tuning</span><span class="skill-tag">Semantic Search</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">genai_stacks</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">LangChain</span><span class="skill-tag">LangGraph</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Azure OpenAI</span><span class="skill-tag">Google Gemini</span><span class="skill-tag">ChromaDB</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">frameworks_libs</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">PyTorch</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">backend_deploy</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Docker</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">Elastic Beanstalk</span><span class="skill-tag">REST APIs</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">languages</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">C#</span><span class="skill-tag">JavaScript</span><span class="skill-tag">SQL</span><span class="skill-tag">Bash</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">game_dev</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Unity</span><span class="skill-tag">C# Scripting</span><span class="skill-tag">Physics2D</span><span class="skill-tag">Animator</span><span class="skill-tag">Tilemap</span><span class="skill-tag">Procedural Gen</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ PROJECTS ═══════════════════════════════ -->
+<section class="section projects" id="projects">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 05_projects</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="project-filters reveal">
+            <button class="filter-btn active" data-filter="all">all</button>
+            <button class="filter-btn" data-filter="genai">genai</button>
+            <button class="filter-btn" data-filter="aiml">ai_ml</button>
+            <button class="filter-btn" data-filter="sde">sde</button>
+            <button class="filter-btn" data-filter="gamedev">game_dev</button>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- ── GenAI ── -->
+            <div class="project-card reveal" data-category="genai">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">GenAI</span>
+                        <a href="https://github.com/striderzz/langgraph-multiagent-nutrition-coach" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">NutriCoach Multi-Agent</div>
+                    <div class="project-desc">5 ReAct agents with GPT-4o-mini and Critic-Revise feedback loop. Live Flask SSE streaming of Think-Act-Observe traces per agent.</div>
+                    <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">GPT-4o</span><span class="tag">Flask SSE</span><span class="tag">ReAct</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="genai">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">GenAI</span>
+                        <a href="https://github.com/striderzz/AI-Agent-Langraph" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">ReAct AI Agent</div>
+                    <div class="project-desc">LangGraph + GPT-4o-mini + Tavily search agent with live-streaming Bootstrap UI showing every reasoning step and tool call in real time.</div>
+                    <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">GPT-4o</span><span class="tag">Tavily</span><span class="tag">Streaming</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="genai">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">GenAI</span>
+                        <a href="https://github.com/striderzz/SQL_AI_AGENT" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">SQL AI Agent</div>
+                    <div class="project-desc">Converts natural language questions to SQL and queries the Chinook music database using Google Gemini and LangChain tool-use.</div>
+                    <div class="project-tags"><span class="tag">Gemini</span><span class="tag">LangChain</span><span class="tag">SQL</span><span class="tag">Python</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="genai">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">GenAI</span>
+                        <a href="https://github.com/striderzz/Finance-Tracker-App-AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">AI Finance Tracker</div>
+                    <div class="project-desc">Full-stack expense tracking app with budget management, charts, database views, and AI-generated financial insights and recommendations.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">OpenAI</span><span class="tag">PostgreSQL</span><span class="tag">Charts</span></div>
+                </div>
+            </div>
+
+            <!-- ── AI / ML ── -->
+            <div class="project-card reveal" data-category="aiml">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">AI / ML</span>
+                        <a href="https://github.com/striderzz/Heart-Disease-Prediction-using-Deep-Learning" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Heart Disease — Deep Learning</div>
+                    <div class="project-desc">Feedforward Neural Network on UCI Cleveland Heart Disease dataset. Full pipeline: preprocessing, feature scaling, training, and multi-metric evaluation.</div>
+                    <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">FFN</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="aiml">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">AI / ML</span>
+                        <a href="https://github.com/striderzz/ML3-CNN-MLP-CIFARMNIST" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">MLP vs CNN — MNIST/CIFAR</div>
+                    <div class="project-desc">PyTorch MLP and CNN evaluated on MNIST (99%+ acc) and CIFAR-10 (~78% acc). 30+ hyperparameter experiments with BatchNorm, Dropout, SGD/Adam.</div>
+                    <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">MNIST</span><span class="tag">CIFAR-10</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="aiml">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">AI / ML</span>
+                        <a href="https://github.com/striderzz/Car-Price-Prediction-ML-Flask-Webapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Car Price Prediction</div>
+                    <div class="project-desc">Linear Regression model deployed as a Flask web app for real-time car price prediction. R² score 0.85. Users input car features and get instant estimates.</div>
+                    <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">Flask</span><span class="tag">Regression</span><span class="tag">Python</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="aiml">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">AI / ML</span>
+                        <a href="https://github.com/striderzz/PyTorch-Transfer-Learning" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Transfer Learning — EfficientNet</div>
+                    <div class="project-desc">Food image classifier using EfficientNet-B0 transfer learning in PyTorch to classify pizza, steak, and sushi with high accuracy on limited data.</div>
+                    <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">EfficientNet</span><span class="tag">Transfer Learning</span></div>
+                </div>
+            </div>
+
+            <!-- ── SDE ── -->
+            <div class="project-card reveal" data-category="sde">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">SDE</span>
+                        <a href="https://github.com/striderzz/Flask_Sockets_Realtime_Chatapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Real-Time Chat App</div>
+                    <div class="project-desc">Real-time chat rooms with Flask-SocketIO. Users create or join private rooms via unique codes. Instant WebSocket-based message exchange.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">SocketIO</span><span class="tag">WebSocket</span><span class="tag">Python</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="sde">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">SDE</span>
+                        <a href="https://github.com/striderzz/Upcoming_Games_Scraper_App" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Upcoming Games Scraper</div>
+                    <div class="project-desc">Flask app scraping Top 30 upcoming AAA games with trailers, genre filters, search, and dark/light theme. Live game data from the web.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">BeautifulSoup</span><span class="tag">Scraping</span><span class="tag">JS</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="sde">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">SDE</span>
+                        <a href="https://github.com/striderzz/Recipe-Manager-Flask_MongoDB" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Recipe Manager</div>
+                    <div class="project-desc">Full-stack recipe manager with Flask, MongoDB Atlas, and Bootstrap. User authentication and full CRUD for personal recipe collections.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">Auth</span><span class="tag">Bootstrap</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="sde">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 1 4 0"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">SDE</span>
+                        <a href="https://github.com/striderzz/StockScope" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">StockScope</div>
+                    <div class="project-desc">Flask web app to manage and calculate stock prices using MongoDB. REST APIs for adding, retrieving, and computing stock portfolio data.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">REST API</span><span class="tag">Python</span></div>
+                </div>
+            </div>
+
+            <!-- ── Game Dev ── -->
+            <div class="project-card reveal" data-category="gamedev">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M7 12h.01M17 12h.01M12 8v8"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game Dev</span>
+                        <a href="https://github.com/striderzz/Arcade-Racing-Game-Unity" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Arcade Racing Game</div>
+                    <div class="project-desc">3D arcade car game built in Unity with physics-based driving, track design, lap timing, and AI opponent logic written in C#.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics3D</span><span class="tag">AI</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="gamedev">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 17 5 5 19 5 19 17"/><polyline points="1 17 23 17"/><line x1="9" y1="17" x2="9" y2="13"/><line x1="15" y1="17" x2="15" y2="8"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game Dev</span>
+                        <a href="https://github.com/striderzz/Unity-Endless-Runner-Procedural-Generation" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Endless Runner — Proc. Gen</div>
+                    <div class="project-desc">Mobile Unity endless runner with procedural level generation. Dynamic obstacle spawning, speed scaling, and optimized for mobile performance.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Procedural</span><span class="tag">Mobile</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="gamedev">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game Dev</span>
+                        <a href="https://github.com/striderzz/2D-TopDown-RPG" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">2D Top-Down RPG</div>
+                    <div class="project-desc">Zelda-style 2D top-down action RPG in Unity. Features combat system, tilemap design, enemy AI, and scene management built entirely in C#.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Tilemap</span><span class="tag">AI</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="gamedev">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game Dev</span>
+                        <a href="https://github.com/striderzz/First-Person-Shooter-Unity3D" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">Zombie FPS — Unity 3D</div>
+                    <div class="project-desc">Wave-based first-person zombie shooter in Unity3D. Features shooting mechanics, enemy wave spawning, health system, and progressive difficulty scaling.</div>
+                    <div class="project-tags"><span class="tag">Unity 3D</span><span class="tag">C#</span><span class="tag">FPS</span><span class="tag">AI Waves</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ CERTIFICATIONS ═══════════════════════════════ -->
+<section class="section certifications" id="certifications">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 06_certifications</span>
+            <h2 class="section-title">Certifications</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="cert-list">
+            <div class="cert-row reveal">
+                <span class="cert-name">Supervised Machine Learning — Regression &amp; Classification</span>
+                <span class="cert-issuer">DeepLearning.AI</span>
+            </div>
+            <div class="cert-row reveal">
+                <span class="cert-name">AI for Everyone</span>
+                <span class="cert-issuer">DeepLearning.AI</span>
+            </div>
+            <div class="cert-row reveal">
+                <span class="cert-name">Machine Learning with Python</span>
+                <span class="cert-issuer">IBM</span>
+            </div>
+            <div class="cert-row reveal">
+                <span class="cert-name">Building AI Agents and Agentic Workflows</span>
+                <span class="cert-issuer">IBM</span>
+            </div>
+            <div class="cert-row reveal">
+                <span class="cert-name">Back-End Developer Professional Certificate</span>
+                <span class="cert-issuer">Meta</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">// 07_contact</span>
+            <h2 class="section-title">Contact</h2>
+            <div class="section-divider"></div>
+        </div>
+        <p class="contact-desc reveal">Open to full-time ML Engineer, AI/ML, and SDE roles. F-1 STEM OPT — no sponsorship required through 2029. I respond within 24 hours.</p>
+        <div class="contact-links reveal">
+            <a href="mailto:hasan16017@gmail.com" class="contact-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/hasan-m-4b1bba315/" class="contact-btn" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/striderzz" class="contact-btn" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+            </a>
+            <a href="Hasan - ML_10 Resume.pdf" class="contact-btn" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Resume
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="footer">
+    <div class="container">
+        hasan mohd. hussain · <a href="https://github.com/striderzz" style="color:var(--primary);text-decoration:none;">@striderzz</a> · dallas, tx
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
