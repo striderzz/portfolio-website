@@ -253,7 +253,7 @@ body {
 .section-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: .64rem; color: var(--primary);
-    letter-spacing: .14em; margin-bottom: .45rem; display: block;
+    letter-spacing: .14em; margin-bottom: .45rem; display: none;
 }
 .section-title {
     font-size: clamp(1.35rem, 2.8vw, 1.7rem);
