@@ -95,10 +95,18 @@
 (function () {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
+    var THEMES = ['dark', 'light', 'hacker', 'blue', 'purple', 'orange'];
+    var label = document.createElement('span');
+    label.className = 'theme-name';
+    btn.appendChild(label);
+    function show() { label.textContent = document.documentElement.dataset.theme; }
+    show();
     btn.addEventListener('click', function () {
-        var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        var cur = THEMES.indexOf(document.documentElement.dataset.theme);
+        var next = THEMES[(cur + 1) % THEMES.length];
         document.documentElement.dataset.theme = next;
         localStorage.setItem('theme', next);
+        show();
     });
 }());
 

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasan Mohd. Hussain — Portfolio</title>
     <script>
-        (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.dataset.theme=t;})();
+        (function(){var t=localStorage.getItem('theme')||'dark';if(['light','dark','hacker','blue','purple','orange'].indexOf(t)<0)t='dark';document.documentElement.dataset.theme=t;})();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-right">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <button class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
                 <svg class="icon-light" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                 </svg>
@@ -59,7 +59,7 @@
             <p class="hero-typing"><span id="typingText"></span><span class="cursor">|</span></p>
             <p class="hero-desc">ML Engineer and CS grad student at UT Dallas. I build agentic AI systems, RAG pipelines, and production-ready LLM applications using LangChain, LangGraph, and PyTorch.</p>
             <div class="hero-cta">
-                <a href="Hasan - ML_10 Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                <a href="Hasan_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Resume
                 </a>
@@ -103,7 +103,7 @@
                         <div class="stat-label">Internships</div>
                     </div>
                     <div>
-                        <div class="stat-number gradient-text">15+</div>
+                        <div class="stat-number gradient-text">20+</div>
                         <div class="stat-label">Projects</div>
                     </div>
                     <div>
@@ -156,18 +156,38 @@
                 <div class="exp-header">
                     <div class="exp-company">Mphasis</div>
                     <div class="exp-date-meta">
+                        <span class="exp-date">Jun 2026 — Aug 2026</span>
+                        <span class="exp-loc">New York, US</span>
+                    </div>
+                </div>
+                <div class="exp-role">machine_learning_engineer</div>
+                <ul class="exp-bullets">
+                    <li>Developed an autonomous <strong>LLM-based QA agent</strong> (Python, Flask, Playwright) that browser-tests a production mortgage-income dashboard end-to-end and grades results against ground-truth keys via a <strong>multi-provider LLM layer</strong> (Claude, GPT-4o, Gemini, self-hosted Qwen).</li>
+                    <li>Applied <strong>LLM-as-a-judge evaluation</strong> to replace manual QA, cutting per-case test time by <strong>95%</strong> (minutes to seconds).</li>
+                    <li>Built a <strong>synthetic data generator</strong> for 5 financial document types (W-2, paystub, VOE, Schedule C, P&amp;L) with computed answer keys, scaling evaluation coverage to <strong>200 cases per run</strong> with zero manual authoring.</li>
+                </ul>
+                <div class="exp-skills-label">key skills learnt</div>
+                <div class="exp-tags">
+                    <span class="tag">LLM Agents</span><span class="tag">Playwright</span><span class="tag">LLM-as-a-Judge</span><span class="tag">Multi-provider LLMs</span><span class="tag">Claude</span><span class="tag">GPT-4o</span><span class="tag">Gemini</span><span class="tag">Qwen</span><span class="tag">RDF4J</span><span class="tag">Turtle (RDF)</span><span class="tag">SPARQL</span><span class="tag">Knowledge Graphs</span><span class="tag">PostgreSQL</span><span class="tag">Synthetic Data</span><span class="tag">Flask</span><span class="tag">Python</span>
+                </div>
+            </div>
+
+            <div class="exp-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">Mphasis</div>
+                    <div class="exp-date-meta">
                         <span class="exp-date">May 2025 — Aug 2025</span>
                         <span class="exp-loc">New York, US</span>
                     </div>
                 </div>
-                <div class="exp-role">machine_learning_engineer_intern</div>
+                <div class="exp-role">machine_learning_engineer</div>
                 <ul class="exp-bullets">
-                    <li>Implemented <strong>text embedding pipelines</strong> using Azure OpenAI and integrated ChromaDB vector databases, optimizing retrieval performance by <strong>30%</strong> for LLM-based RAG workflows.</li>
-                    <li>Developed Python backend logic for full-stack applications, improving <strong>API response performance by 20%</strong>.</li>
-                    <li>Built and deployed services with <strong>FastAPI, Docker, AWS, LangChain, Azure OpenAI, and Google Gemini APIs</strong>.</li>
+                    <li>Built a <strong>RAG system</strong> ingesting PDFs into <strong>ChromaDB</strong> with a <strong>FastAPI</strong> dashboard and <strong>Azure OpenAI</strong> LLM, improving retrieval by <strong>30%</strong>.</li>
+                    <li>Optimized <strong>Python backend logic</strong> for full-stack AI apps (<strong>FastAPI, LangChain, AWS</strong>), improving <strong>API response performance by 20%</strong>.</li>
                 </ul>
+                <div class="exp-skills-label">key skills learnt</div>
                 <div class="exp-tags">
-                    <span class="tag">Azure OpenAI</span><span class="tag">ChromaDB</span><span class="tag">LangChain</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">Gemini</span>
+                    <span class="tag">RAG</span><span class="tag">ChromaDB</span><span class="tag">Embeddings</span><span class="tag">Azure OpenAI</span><span class="tag">LangChain</span><span class="tag">FastAPI</span><span class="tag">AWS</span><span class="tag">Docker</span>
                 </div>
             </div>
 
@@ -259,7 +279,7 @@
             <div class="skill-category reveal">
                 <div class="skill-cat-title">ai_and_ml</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">Deep Learning</span><span class="skill-tag">Transformers</span><span class="skill-tag">RAG</span><span class="skill-tag">AI Agents</span><span class="skill-tag">Embeddings</span><span class="skill-tag">Fine-Tuning</span><span class="skill-tag">Semantic Search</span>
+                    <span class="skill-tag">Deep Learning</span><span class="skill-tag">Transformers</span><span class="skill-tag">RAG</span><span class="skill-tag">AI Agents</span><span class="skill-tag">Embeddings</span><span class="skill-tag">Fine-Tuning</span><span class="skill-tag">Semantic Search</span><span class="skill-tag">LLM-as-a-Judge</span><span class="skill-tag">Multi-Agent Systems</span><span class="skill-tag">Knowledge Graphs</span>
                 </div>
             </div>
 
@@ -273,14 +293,14 @@
             <div class="skill-category reveal">
                 <div class="skill-cat-title">frameworks_libs</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">PyTorch</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span>
+                    <span class="skill-tag">PyTorch</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">Playwright</span><span class="skill-tag">PyTest</span>
                 </div>
             </div>
 
             <div class="skill-category reveal">
                 <div class="skill-cat-title">backend_deploy</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">Docker</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">Elastic Beanstalk</span><span class="skill-tag">REST APIs</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Docker</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">Elastic Beanstalk</span><span class="skill-tag">REST APIs</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">RDF4J</span><span class="skill-tag">SPARQL</span><span class="skill-tag">Turtle (RDF)</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">GCP</span><span class="skill-tag">Azure</span><span class="skill-tag">RabbitMQ</span><span class="skill-tag">CI/CD</span><span class="skill-tag">MongoDB</span>
                 </div>
             </div>
 
@@ -322,6 +342,26 @@
         <div class="projects-grid">
 
             <!-- ── GenAI ── -->
+            <div class="project-card reveal" data-category="genai">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="9" height="18"/><rect x="13" y="9" width="7" height="12"/><path d="M7 7h1M10 7h1M7 11h1M10 11h1M7 15h1M10 15h1M16 13h1M16 17h1M2 21h20"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">GenAI · Featured</span>
+                        <a href="https://github.com/striderzz/JobQuest.AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                        <a href="https://github.com/striderzz/JobQuest.AI/releases/latest" class="project-link" target="_blank" rel="noopener" aria-label="Download installer">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">JobQuest.AI</div>
+                    <div class="project-desc">Desktop AI job-hunt co-pilot: ranks entry-level jobs from 140+ boards against your resume, with a 10-provider LLM layer, application tracker and analytics dashboard, cover letters, a cold-email desk that reads screenshots, and review-first Gmail sync. Ships as a Windows installer.</div>
+                    <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">LLM Agents</span><span class="tag">Multi-LLM</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">PyInstaller</span></div>
+                </div>
+            </div>
+
             <div class="project-card reveal" data-category="genai">
                 <div class="project-thumb">
                     <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
@@ -569,12 +609,12 @@
                 <div class="project-body">
                     <div class="project-meta">
                         <span class="project-type">SDE</span>
-                        <a href="https://github.com/striderzz/Recipe-Manager-Flask_MongoDB" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <a href="https://github.com/striderzz/recipe-manager-flask-mongodb-aws" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </a>
                     </div>
                     <div class="project-title">Recipe Manager</div>
-                    <div class="project-desc">Full-stack recipe manager with Flask, MongoDB Atlas, and Bootstrap. User authentication and full CRUD for personal recipe collections.</div>
+                    <div class="project-desc">Full-stack recipe manager with Flask, MongoDB Atlas, and Bootstrap: user authentication and full CRUD, containerised with Docker and deployed on AWS.</div>
                     <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">Auth</span><span class="tag">Bootstrap</span></div>
                 </div>
             </div>
@@ -682,6 +722,23 @@
                 </div>
             </div>
 
+            <div class="project-card reveal" data-category="gamedev">
+                <div class="project-thumb">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h6v-4h5v-5h5V6h4"/><circle cx="6" cy="12" r="2"/></svg>
+                </div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game Dev</span>
+                        <a href="https://github.com/striderzz/2D-Platformer-Unity" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                    </div>
+                    <div class="project-title">2D Platformer — Unity</div>
+                    <div class="project-desc">2D platformer game and starter template built in Unity with C#.</div>
+                    <div class="project-tags"><span class="tag">Unity 2D</span><span class="tag">C#</span><span class="tag">Platformer</span></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -741,7 +798,7 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 GitHub
             </a>
-            <a href="Hasan - ML_10 Resume.pdf" class="contact-btn" target="_blank" rel="noopener">
+            <a href="Hasan_Resume.pdf" class="contact-btn" target="_blank" rel="noopener">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 Resume
             </a>

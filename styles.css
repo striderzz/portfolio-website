@@ -42,7 +42,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: Calibri, Carlito, 'Segoe UI', sans-serif;
     font-size: 14px;
     background: var(--bg);
     color: var(--text);
@@ -214,7 +214,7 @@ body {
     padding: .5rem 1.05rem; border-radius: 5px;
     font-size: .72rem; font-weight: 700;
     text-decoration: none; transition: all .2s;
-    border: 1px solid transparent; font-family: 'Josefin Sans', sans-serif;
+    border: 1px solid transparent; font-family: Calibri, Carlito, 'Segoe UI', sans-serif;
     letter-spacing: .09em; text-transform: uppercase;
 }
 .btn-primary { background: var(--primary); color: var(--bg); border-color: var(--primary); }
@@ -429,3 +429,54 @@ body {
     .contact-links { flex-direction: column; }
     .contact-btn { justify-content: center; }
 }
+
+/* ============================================================
+   TYPE: Calibri for text, Poppins for headings
+   ============================================================ */
+body { font-size: 15px; }
+h1, h2, h3, h4, .section-title, .hero-name, .project-title, .exp-company, .edu-school, .cert-name {
+    font-family: 'Poppins', sans-serif; font-weight: 500; letter-spacing: .01em;
+}
+.theme-toggle { width: auto; min-width: 28px; padding: 0 .55rem; gap: .4rem; }
+.theme-name { font-family: 'JetBrains Mono', monospace; font-size: .62rem; text-transform: lowercase; }
+[data-theme] .icon-light, [data-theme] .icon-dark { display: none; }
+[data-theme="light"] .icon-light, [data-theme]:not([data-theme="light"]) .icon-dark { display: block; }
+
+/* ============================================================
+   THEMES: hacker (green), blue, purple, orange
+   ============================================================ */
+[data-theme="hacker"] {
+    --bg: #030703; --bg-alt: #061006; --card: #0a140a; --thumb: #071007;
+    --border: rgba(0,255,102,0.12); --border-h: rgba(0,255,102,0.35);
+    --primary: #00ff66; --primary-bg: rgba(0,255,102,0.08);
+    --text: #b9ffcf; --text-2: #5fcf86; --text-3: #2f6b44;
+    --shadow-h: 0 0 24px rgba(0,255,102,0.18); --cursor: rgba(0,255,102,0.45);
+}
+[data-theme="hacker"] body, [data-theme="hacker"] h1, [data-theme="hacker"] h2, [data-theme="hacker"] h3,
+[data-theme="hacker"] .section-title, [data-theme="hacker"] .project-title, [data-theme="hacker"] .exp-company {
+    font-family: 'JetBrains Mono', monospace;
+}
+[data-theme="blue"] {
+    --bg: #070f1f; --bg-alt: #0a1428; --card: #0f1b34; --thumb: #0b162b;
+    --border: rgba(120,170,255,0.12); --border-h: rgba(120,170,255,0.32);
+    --primary: #5aa2ff; --primary-bg: rgba(90,162,255,0.10);
+    --text: #e6eefc; --text-2: #92a6c9; --text-3: #3d5276;
+    --shadow-h: 0 4px 24px rgba(0,0,0,0.45); --cursor: rgba(90,162,255,0.40);
+}
+[data-theme="purple"] {
+    --bg: #0f0a1a; --bg-alt: #140e22; --card: #1b1430; --thumb: #160f27;
+    --border: rgba(180,150,255,0.12); --border-h: rgba(180,150,255,0.32);
+    --primary: #b18cff; --primary-bg: rgba(177,140,255,0.10);
+    --text: #efe9fb; --text-2: #a79cc4; --text-3: #4b3f6b;
+    --shadow-h: 0 4px 24px rgba(0,0,0,0.45); --cursor: rgba(177,140,255,0.40);
+}
+[data-theme="orange"] {
+    --bg: #140d07; --bg-alt: #1a110a; --card: #22170d; --thumb: #1c130b;
+    --border: rgba(255,160,90,0.12); --border-h: rgba(255,160,90,0.32);
+    --primary: #ff9142; --primary-bg: rgba(255,145,66,0.10);
+    --text: #fbefe4; --text-2: #c4a184; --text-3: #6b4c33;
+    --shadow-h: 0 4px 24px rgba(0,0,0,0.45); --cursor: rgba(255,145,66,0.40);
+}
+[data-theme="hacker"] #neuralCanvas, [data-theme="blue"] #neuralCanvas,
+[data-theme="purple"] #neuralCanvas, [data-theme="orange"] #neuralCanvas { opacity: .22; }
+.exp-skills-label { font-family: 'JetBrains Mono', monospace; font-size: .6rem; color: var(--text-3); text-transform: uppercase; letter-spacing: .08em; margin: .6rem 0 .3rem; }
