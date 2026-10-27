@@ -95,19 +95,24 @@
 (function () {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
-    var THEMES = ['dark', 'light', 'hacker', 'blue', 'purple', 'orange'];
-    var label = document.createElement('span');
-    label.className = 'theme-name';
-    btn.appendChild(label);
-    function show() { label.textContent = document.documentElement.dataset.theme; }
-    show();
-    btn.addEventListener('click', function () {
-        var cur = THEMES.indexOf(document.documentElement.dataset.theme);
-        var next = THEMES[(cur + 1) % THEMES.length];
-        document.documentElement.dataset.theme = next;
-        localStorage.setItem('theme', next);
-        show();
+    var NAMES = { light: 'Light', dark: 'Dark', hacker: 'Hacker', blue: 'Blue', purple: 'Purple', orange: 'Orange' };
+    var menu = document.getElementById('themeMenu');
+    var label = btn.querySelector('.theme-name');
+    function apply(t) {
+        document.documentElement.dataset.theme = t;
+        try { localStorage.setItem('theme', t); } catch (e) {}
+        if (label) label.textContent = NAMES[t] || t;
+        menu.querySelectorAll('[data-theme-pick]').forEach(function (b) { b.classList.toggle('active', b.dataset.themePick === t); });
+    }
+    function toggle(open) { menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    apply(document.documentElement.dataset.theme || 'dark');
+    btn.addEventListener('click', function (e) { e.stopPropagation(); toggle(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-theme-pick]');
+        if (b) { apply(b.dataset.themePick); toggle(false); }
     });
+    document.addEventListener('click', function () { toggle(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle(false); });
 }());
 
 /* ============================================================
@@ -251,3 +256,6 @@
         el.addEventListener('mouseleave', function () { ring.classList.remove('expanded'); dot.classList.remove('hidden'); });
     });
 }());
+
+/* full project description on hover, since cards show one line */
+document.querySelectorAll('.project-desc, .project-title').forEach(function (el) { el.title = el.textContent.trim(); });

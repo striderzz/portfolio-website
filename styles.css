@@ -553,3 +553,33 @@ a, button { transition: color .25s ease, background-color .25s ease, border-colo
 .cert-verify::after { content: ' \2197'; }
 @media (max-width: 900px) { .cert-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .cert-list { grid-template-columns: 1fr; } .cert-row { min-height: 0; } }
+
+/* ============================================================
+   THEME PICKER MENU
+   ============================================================ */
+.theme-picker { position: relative; }
+.theme-toggle { gap: .45rem; padding: 0 .65rem; height: 30px; }
+.theme-toggle .theme-name { font-family: 'Poppins', sans-serif; font-size: .7rem; text-transform: none; }
+.theme-menu { position: absolute; right: 0; top: calc(100% + .5rem); min-width: 170px; padding: .35rem; border-radius: 10px;
+    background: var(--card); border: 1px solid var(--border-h); box-shadow: var(--shadow-h); z-index: 1000;
+    opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+.theme-menu.open { opacity: 1; visibility: visible; transform: none; }
+.theme-menu button { display: flex; align-items: center; gap: .6rem; width: 100%; padding: .5rem .6rem; border: 0; border-radius: 6px;
+    background: transparent; color: var(--text); font-family: 'Poppins', sans-serif; font-size: .78rem; text-align: left; }
+.theme-menu button:hover { background: var(--primary-bg); }
+.theme-menu button.active { color: var(--primary); font-weight: 600; }
+.sw { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid rgba(127,127,127,.4); flex-shrink: 0; }
+.sw-light { background: #f4f4f4; } .sw-dark { background: #0e0f12; } .sw-hacker { background: #00ff66; }
+.sw-blue { background: #5aa2ff; } .sw-purple { background: #b18cff; } .sw-orange { background: #ff9142; }
+
+/* ============================================================
+   PROJECT CARDS: uniform size, one-line description
+   ============================================================ */
+.projects-grid { align-items: stretch; grid-auto-rows: 1fr; }
+.project-card { display: flex; flex-direction: column; height: 100%; }
+.project-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.project-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.project-desc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: .7rem; }
+.project-tags { margin-top: auto; display: flex; flex-wrap: nowrap; overflow: hidden; gap: .3rem;
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.project-tags .tag { flex-shrink: 0; }
