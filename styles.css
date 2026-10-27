@@ -177,7 +177,7 @@ body {
     letter-spacing: .14em; margin-bottom: 1rem;
     display: flex; align-items: center; gap: .6rem;
 }
-.hero-label-text::before { content: '> '; }
+
 .badge-dot {
     width: 5px; height: 5px; background: var(--primary);
     border-radius: 50%; animation: pulse 2s infinite;
@@ -302,7 +302,7 @@ body {
 .exp-role { font-size: .73rem; color: var(--primary); font-weight: 600; font-family: 'JetBrains Mono', monospace; letter-spacing: .03em; margin-bottom: .65rem; }
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: .3rem; margin-bottom: .75rem; }
 .exp-bullets li { font-size: .83rem; color: var(--text-2); padding-left: 1rem; position: relative; line-height: 1.7; }
-.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--text-3); font-size: .7rem; top: .1rem; }
+.exp-bullets li::before { content: ''; position: absolute; left: .15rem; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); }
 .exp-bullets li strong { color: var(--text); }
 .exp-tags { display: flex; flex-wrap: wrap; gap: .28rem; }
 
@@ -480,3 +480,53 @@ h1, h2, h3, h4, .section-title, .hero-name, .project-title, .exp-company, .edu-s
 [data-theme="hacker"] #neuralCanvas, [data-theme="blue"] #neuralCanvas,
 [data-theme="purple"] #neuralCanvas, [data-theme="orange"] #neuralCanvas { opacity: .22; }
 .exp-skills-label { font-family: 'JetBrains Mono', monospace; font-size: .6rem; color: var(--text-3); text-transform: uppercase; letter-spacing: .08em; margin: .6rem 0 .3rem; }
+
+/* ============================================================
+   PROFESSIONAL TYPE PASS: no code-style labels outside the hacker theme
+   ============================================================ */
+body { font-size: 15.5px; line-height: 1.7; letter-spacing: .005em; }
+.section-title { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: -.01em; text-transform: none; }
+.hero-name, h1 { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: -.02em; }
+.hero-sub-title { font-family: 'Poppins', sans-serif; font-weight: 400; }
+.hero-label-text, .stat-label, .info-k, .exp-date, .exp-loc, .exp-role, .exp-skills-label, .edu-courses,
+.skill-cat-title, .project-type, .filter-btn, .tag, .skill-tag, .cert-issuer, .theme-name, .nav-links a {
+    font-family: 'Poppins', sans-serif; letter-spacing: .02em;
+}
+.exp-role { font-size: .82rem; font-weight: 500; text-transform: none; }
+.exp-date, .exp-loc { font-size: .72rem; }
+.stat-label, .info-k, .exp-skills-label, .skill-cat-title, .project-type { font-size: .66rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
+.tag, .skill-tag { font-size: .7rem; font-weight: 400; }
+.project-title { text-transform: none; font-weight: 600; font-size: .95rem; letter-spacing: 0; }
+.project-desc, .exp-bullets li { font-family: Calibri, Carlito, 'Segoe UI', sans-serif; font-size: .95rem; }
+.exp-bullets li { padding-left: 1rem; }
+.cert-row { text-decoration: none; color: inherit; transition: background .15s; padding-left: .5rem; padding-right: .5rem; border-radius: 6px; }
+.cert-row:hover { background: var(--primary-bg); }
+.cert-main { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
+.cert-name { font-family: 'Poppins', sans-serif; font-weight: 500; font-size: .9rem; }
+.cert-issuer { text-align: left; font-size: .72rem; color: var(--text-2); }
+.cert-verify { font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 500; color: var(--primary); border: 1px solid var(--border-h); border-radius: 999px; padding: .2rem .7rem; flex-shrink: 0; }
+.cert-row:hover .cert-verify { border-color: var(--primary); }
+/* the hacker theme keeps its terminal look */
+[data-theme="hacker"] .hero-label-text, [data-theme="hacker"] .stat-label, [data-theme="hacker"] .info-k,
+[data-theme="hacker"] .exp-role, [data-theme="hacker"] .tag, [data-theme="hacker"] .skill-tag, [data-theme="hacker"] .cert-name,
+[data-theme="hacker"] .cert-issuer, [data-theme="hacker"] .cert-verify, [data-theme="hacker"] .project-desc,
+[data-theme="hacker"] .exp-bullets li, [data-theme="hacker"] .filter-btn, [data-theme="hacker"] .nav-links a { font-family: 'JetBrains Mono', monospace; }
+
+/* ============================================================
+   SMOOTH TRANSITIONS
+   ============================================================ */
+body, .navbar, .card, .project-card, .exp-item, .skill-category, .info-card, .cert-row, .edu-item,
+.tag, .skill-tag, .filter-btn, .btn, .theme-toggle, .contact-btn, .section-title, .project-thumb {
+    transition: background-color .45s ease, color .45s ease, border-color .45s ease, box-shadow .3s ease, transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.reveal { transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transform: translateY(14px); }
+.project-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-h); }
+.cert-row:hover { transform: translateX(3px); }
+.btn:hover, .contact-btn:hover { transform: translateY(-1px); }
+a, button { transition: color .25s ease, background-color .25s ease, border-color .25s ease, opacity .25s ease; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    .reveal { opacity: 1; transform: none; }
+}
+.hero-typing { font-family: 'Poppins', sans-serif; font-weight: 400; letter-spacing: .01em; }
+[data-theme="hacker"] .hero-typing { font-family: 'JetBrains Mono', monospace; }
