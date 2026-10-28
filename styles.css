@@ -42,7 +42,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    font-family: Calibri, Carlito, 'Segoe UI', sans-serif;
     font-size: 14px;
     background: var(--bg);
     color: var(--text);
@@ -214,7 +214,7 @@ body {
     padding: .5rem 1.05rem; border-radius: 5px;
     font-size: .72rem; font-weight: 700;
     text-decoration: none; transition: all .2s;
-    border: 1px solid transparent; font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    border: 1px solid transparent; font-family: Calibri, Carlito, 'Segoe UI', sans-serif;
     letter-spacing: .09em; text-transform: uppercase;
 }
 .btn-primary { background: var(--primary); color: var(--bg); border-color: var(--primary); }
@@ -431,11 +431,11 @@ body {
 }
 
 /* ============================================================
-   TYPE: Montserrat for text and headings
+   TYPE: Calibri for text, Poppins for headings
    ============================================================ */
 body { font-size: 15px; }
 h1, h2, h3, h4, .section-title, .hero-name, .project-title, .exp-company, .edu-school, .cert-name {
-    font-family: 'Montserrat', sans-serif; font-weight: 500; letter-spacing: .01em;
+    font-family: 'Poppins', sans-serif; font-weight: 500; letter-spacing: .01em;
 }
 .theme-toggle { width: auto; min-width: 28px; padding: 0 .55rem; gap: .4rem; }
 .theme-name { font-family: 'JetBrains Mono', monospace; font-size: .62rem; text-transform: lowercase; }
@@ -485,26 +485,26 @@ h1, h2, h3, h4, .section-title, .hero-name, .project-title, .exp-company, .edu-s
    PROFESSIONAL TYPE PASS: no code-style labels outside the hacker theme
    ============================================================ */
 body { font-size: 15.5px; line-height: 1.7; letter-spacing: .005em; }
-.section-title { font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: -.01em; text-transform: none; }
-.hero-name, h1 { font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: -.02em; }
-.hero-sub-title { font-family: 'Montserrat', sans-serif; font-weight: 400; }
+.section-title { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: -.01em; text-transform: none; }
+.hero-name, h1 { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: -.02em; }
+.hero-sub-title { font-family: 'Poppins', sans-serif; font-weight: 400; }
 .hero-label-text, .stat-label, .info-k, .exp-date, .exp-loc, .exp-role, .exp-skills-label, .edu-courses,
 .skill-cat-title, .project-type, .filter-btn, .tag, .skill-tag, .cert-issuer, .theme-name, .nav-links a {
-    font-family: 'Montserrat', sans-serif; letter-spacing: .02em;
+    font-family: 'Poppins', sans-serif; letter-spacing: .02em;
 }
 .exp-role { font-size: .82rem; font-weight: 500; text-transform: none; }
 .exp-date, .exp-loc { font-size: .72rem; }
 .stat-label, .info-k, .exp-skills-label, .skill-cat-title, .project-type { font-size: .66rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
 .tag, .skill-tag { font-size: .7rem; font-weight: 400; }
 .project-title { text-transform: none; font-weight: 600; font-size: .95rem; letter-spacing: 0; }
-.project-desc, .exp-bullets li { font-family: 'Montserrat', 'Segoe UI', sans-serif; font-size: .95rem; }
+.project-desc, .exp-bullets li { font-family: Calibri, Carlito, 'Segoe UI', sans-serif; font-size: .95rem; }
 .exp-bullets li { padding-left: 1rem; }
 .cert-row { text-decoration: none; color: inherit; transition: background .15s; padding-left: .5rem; padding-right: .5rem; border-radius: 6px; }
 .cert-row:hover { background: var(--primary-bg); }
 .cert-main { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
-.cert-name { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: .9rem; }
+.cert-name { font-family: 'Poppins', sans-serif; font-weight: 500; font-size: .9rem; }
 .cert-issuer { text-align: left; font-size: .72rem; color: var(--text-2); }
-.cert-verify { font-family: 'Montserrat', sans-serif; font-size: .72rem; font-weight: 500; color: var(--primary); border: 1px solid var(--border-h); border-radius: 999px; padding: .2rem .7rem; flex-shrink: 0; }
+.cert-verify { font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 500; color: var(--primary); border: 1px solid var(--border-h); border-radius: 999px; padding: .2rem .7rem; flex-shrink: 0; }
 .cert-row:hover .cert-verify { border-color: var(--primary); }
 /* the hacker theme keeps its terminal look */
 [data-theme="hacker"] .hero-label-text, [data-theme="hacker"] .stat-label, [data-theme="hacker"] .info-k,
@@ -528,7 +528,7 @@ a, button { transition: color .25s ease, background-color .25s ease, border-colo
     *, *::before, *::after { transition: none !important; animation: none !important; }
     .reveal { opacity: 1; transform: none; }
 }
-.hero-typing { font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: .01em; }
+.hero-typing { font-family: 'Poppins', sans-serif; font-weight: 400; letter-spacing: .01em; }
 [data-theme="hacker"] .hero-typing { font-family: 'JetBrains Mono', monospace; }
 .info-v a, .contact-desc a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-h); }
 .info-v a:hover, .contact-desc a:hover { color: var(--primary); border-color: var(--primary); }
@@ -559,13 +559,13 @@ a, button { transition: color .25s ease, background-color .25s ease, border-colo
    ============================================================ */
 .theme-picker { position: relative; }
 .theme-toggle { gap: .45rem; padding: 0 .65rem; height: 30px; }
-.theme-toggle .theme-name { font-family: 'Montserrat', sans-serif; font-size: .7rem; text-transform: none; }
+.theme-toggle .theme-name { font-family: 'Poppins', sans-serif; font-size: .7rem; text-transform: none; }
 .theme-menu { position: absolute; right: 0; top: calc(100% + .5rem); min-width: 170px; padding: .35rem; border-radius: 10px;
     background: var(--card); border: 1px solid var(--border-h); box-shadow: var(--shadow-h); z-index: 1000;
     opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
 .theme-menu.open { opacity: 1; visibility: visible; transform: none; }
 .theme-menu button { display: flex; align-items: center; gap: .6rem; width: 100%; padding: .5rem .6rem; border: 0; border-radius: 6px;
-    background: transparent; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: .78rem; text-align: left; }
+    background: transparent; color: var(--text); font-family: 'Poppins', sans-serif; font-size: .78rem; text-align: left; }
 .theme-menu button:hover { background: var(--primary-bg); }
 .theme-menu button.active { color: var(--primary); font-weight: 600; }
 .sw { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid rgba(127,127,127,.4); flex-shrink: 0; }
