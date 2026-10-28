@@ -88,30 +88,30 @@ body {
    ============================================================ */
 .navbar {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    padding: .9rem 0;
+    padding: 1.25rem 0;
     transition: background .3s, border-color .3s, padding .3s;
     border-bottom: 1px solid transparent;
 }
 .navbar.scrolled {
     background: var(--bg);
     border-color: var(--border);
-    padding: .6rem 0;
+    padding: .9rem 0;
 }
 .nav-container {
-    max-width: 960px; margin: 0 auto; padding: 0 1.5rem;
+    max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
 .nav-logo {
     font-family: 'JetBrains Mono', monospace;
-    font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    font-size: 1.05rem; font-weight: 700; letter-spacing: .04em;
     text-decoration: none; color: var(--text); flex-shrink: 0;
 }
 .logo-bracket { color: var(--primary); }
 
-.nav-links { display: flex; list-style: none; gap: 1.6rem; }
+.nav-links { display: flex; list-style: none; gap: 2rem; }
 .nav-links a {
     text-decoration: none; color: var(--text-2);
-    font-size: .72rem; font-weight: 600;
+    font-size: .84rem; font-weight: 600;
     letter-spacing: .09em; text-transform: uppercase;
     transition: color .2s; position: relative; padding-bottom: 2px;
 }
@@ -680,7 +680,8 @@ body { font-size: 13.5px; }
 }
 /* hacker: lime terminal green on grey and black */
 [data-theme="hacker"] {
-    --primary: #39ff14; --primary-bg: rgba(57,255,20,0.08); --border-h: rgba(57,255,20,0.45);
-    --shadow-h: 0 0 22px rgba(57,255,20,0.16); --cursor: rgba(57,255,20,0.5);
+    --primary: #2ea84a; --primary-bg: rgba(46,168,74,0.08); --border-h: rgba(46,168,74,0.42);
+    --border: rgba(46,168,74,0.14); --text: #a9d4b4; --text-2: #5f9e70; --text-3: #3a6a48;
+    --shadow-h: 0 0 18px rgba(46,168,74,0.14); --cursor: rgba(46,168,74,0.45);
 }
-.sw-hacker { background: linear-gradient(135deg, #0a0a0a 50%, #39ff14 50%); }
+.sw-hacker { background: linear-gradient(135deg, #0a0a0a 50%, #2ea84a 50%); }
