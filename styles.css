@@ -639,8 +639,8 @@ a, button { transition: color .25s ease, background-color .25s ease, border-colo
 /* ============================================================
    COMPACT, FRAMED LAYOUT (about 20% smaller, modern section cards)
    ============================================================ */
-html { font-size: 13.5px; }
-body { font-size: 13.5px; }
+html { font-size: 15.5px; }
+body { font-size: 15.5px; }
 .container { max-width: 1020px; }
 .hero { min-height: 86vh; }
 .hero-title { font-size: clamp(2.4rem, 5.2vw, 3.9rem) !important; line-height: 1.04; }
