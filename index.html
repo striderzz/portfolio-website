@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=50">
+    <link rel="stylesheet" href="styles.css?v=59">
 </head>
 <body>
+<canvas id="techBg" aria-hidden="true"></canvas>
 <div id="scrollProgress" aria-hidden="true"></div>
 <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
 <nav class="navbar" id="navbar">
@@ -43,7 +44,6 @@
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero" id="home">
-    <canvas id="neuralCanvas"></canvas>
     <div class="hero-inner">
         <div class="hero-content">
             <div class="hero-label">
@@ -92,6 +92,7 @@
             <div class="about-text">
                 <p>I'm a <strong>Machine Learning Engineer</strong> based in <strong>Mumbai, India</strong>. I completed my <strong>M.S. in Computer Engineering at The University of Texas at Dallas</strong> (2024 – 2026) and build agentic AI systems, LLM applications and RAG pipelines that hold up in production.</p>
                 <p>At <strong>Mphasis</strong> I built an autonomous LLM-based QA agent with LLM-as-a-judge evaluation and a RAG system on ChromaDB and Azure OpenAI. Before that I shipped Python/Flask services as a software engineer at <strong>Shree Infotech</strong>, and Unity games in C# at two Mumbai game studios.</p>
+                <p>My projects include multi-agent AI systems, ReAct agents, SQL AI agents, AI finance tools, deep learning models, full-stack Flask and Django apps, and Unity games.</p>
                 <p>I care about systems that actually work in production, not just notebooks: reliable agents, measurable evaluation, and clean deployment with FastAPI and Docker.</p>
                 <div class="about-stats">
                     <div>
@@ -103,7 +104,7 @@
                         <div class="stat-label">Projects</div>
                     </div>
                     <div>
-                        <div class="stat-number gradient-text">11</div>
+                        <div class="stat-number gradient-text">12</div>
                         <div class="stat-label">Certifications</div>
                     </div>
                 </div>
@@ -175,7 +176,7 @@
                         <span class="exp-loc">New York, US</span>
                     </div>
                 </div>
-                <div class="exp-role">Machine Learning Engineer</div>
+                <div class="exp-role">Machine Learning Engineer Intern</div>
                 <ul class="exp-bullets">
                     <li>Built a <strong>RAG system</strong> ingesting PDFs into <strong>ChromaDB</strong> with a <strong>FastAPI</strong> dashboard and <strong>Azure OpenAI</strong> LLM, improving retrieval by <strong>30%</strong>.</li>
                     <li>Optimized <strong>Python backend logic</strong> for full-stack AI apps (<strong>FastAPI, LangChain, AWS</strong>), improving <strong>API response performance by 20%</strong>.</li>
@@ -194,7 +195,7 @@
                         <span class="exp-loc">Mumbai, India</span>
                     </div>
                 </div>
-                <div class="exp-role">Game Developer Intern</div>
+                <div class="exp-role">Unity Game Developer Intern</div>
                 <ul class="exp-bullets">
                     <li>Implemented <strong>gameplay features in C# and Unity</strong>, translating design specs into functional interactive systems.</li>
                     <li>Collaborated with developers, artists, and designers in <strong>Agile/Scrum workflows</strong> using Git for iterative development.</li>
@@ -231,10 +232,10 @@
                         <span class="exp-loc">Mumbai, India</span>
                     </div>
                 </div>
-                <div class="exp-role">Game Developer Intern</div>
+                <div class="exp-role">Unity Game Developer Intern</div>
                 <ul class="exp-bullets">
-                    <li>Developed a <strong>2D physics-based game prototype</strong> in Unity using C#, delivered within a two-week sprint.</li>
-                    <li>Applied engineering practices — debugging, iteration, team collaboration — to improve <strong>gameplay systems and user engagement</strong>.</li>
+                    <li>Built a <strong>2D physics-based driving game</strong> in Unity/C# within two weeks, contributing to <strong>500K downloads</strong> in its first month.</li>
+                    <li>Increased user engagement by <strong>30%</strong> by tuning gameplay mechanics: terrain design, vehicle upgrades and a progression system.</li>
                 </ul>
                 <div class="exp-tags">
                     <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics2D</span>
@@ -300,14 +301,14 @@
             <div class="skill-category reveal">
                 <div class="skill-cat-title"><img class="only-dark skill-icon" src="assets/icons/skill-genai-dark.webp" alt="" width="28" height="28" loading="lazy"><img class="only-light skill-icon" src="assets/icons/skill-genai-light.webp" alt="" width="28" height="28" loading="lazy">Generative AI</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">LangChain</span><span class="skill-tag">LangGraph</span><span class="skill-tag">Claude Code</span><span class="skill-tag">Claude Cowork</span><span class="skill-tag">MCP (Model Context Protocol)</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Azure OpenAI</span><span class="skill-tag">Google Gemini</span><span class="skill-tag">ChromaDB</span>
+                    <span class="skill-tag">LangChain</span><span class="skill-tag">LangGraph</span><span class="skill-tag">Claude Code</span><span class="skill-tag">Claude Skills</span><span class="skill-tag">Claude Cowork</span><span class="skill-tag">MCP (Model Context Protocol)</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Azure OpenAI</span><span class="skill-tag">Google Gemini</span><span class="skill-tag">ChromaDB</span>
                 </div>
             </div>
 
             <div class="skill-category reveal">
                 <div class="skill-cat-title"><img class="only-dark skill-icon" src="assets/icons/skill-frameworks-dark.webp" alt="" width="28" height="28" loading="lazy"><img class="only-light skill-icon" src="assets/icons/skill-frameworks-light.webp" alt="" width="28" height="28" loading="lazy">Frameworks &amp; Libraries</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">PyTorch</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">PyTest</span>
+                    <span class="skill-tag">PyTorch</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">PyTest</span>
                 </div>
             </div>
 
@@ -866,6 +867,9 @@
                 <span class="cert-main"><span class="cert-name">Building AI Agents and Agentic Workflows (Specialization)</span><span class="cert-issuer">IBM · Coursera · Apr 2026</span></span>
                 <span class="cert-verify">View</span>
             </a>
+            <div class="cert-row reveal">
+                <span class="cert-main"><span class="cert-name">Claude Code in Action</span><span class="cert-issuer">Anthropic</span></span>
+            </div>
             <a class="cert-row reveal" href="https://verify.skilljar.com/c/43oapmo7gzdj" target="_blank" rel="noopener">
                 <span class="cert-main"><span class="cert-name">Claude Code 101</span><span class="cert-issuer">Anthropic</span></span>
                 <span class="cert-verify">View</span>
@@ -917,7 +921,7 @@
             <h2 class="section-title">Contact</h2>
             <div class="section-divider"></div>
         </div>
-        <p class="contact-desc reveal">Open to full-time ML Engineer, AI/ML, and SDE roles in India. Email <a href="mailto:hasan98209@gmail.com">hasan98209@gmail.com</a> or call <a href="tel:+917400341331">+91 74003 41331</a>. I respond within 24 hours.</p>
+        <p class="contact-desc reveal">Open to Machine Learning Engineer, AI Engineer, Generative AI Engineer, and Software Development Engineer roles. Email <a href="mailto:hasan98209@gmail.com">hasan98209@gmail.com</a> or call <a href="tel:+917400341331">+91 74003 41331</a>. I respond within 24 hours.</p>
         <div class="contact-links reveal">
             <a href="mailto:hasan98209@gmail.com" class="contact-btn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -948,6 +952,6 @@
     </div>
 </footer>
 
-<script src="script.js?v=22"></script>
+<script src="script.js?v=25"></script>
 </body>
 </html>

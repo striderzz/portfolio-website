@@ -1286,3 +1286,158 @@ button, input, select, textarea { font-family: inherit; }
 /* university badges are themed images from GIMP */
 .edu-logo { background: none; padding: 0; border-radius: 50%; box-shadow: 0 0 0 1px var(--border), var(--card-shadow); overflow: hidden; }
 .edu-logo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* ============================================================
+   CALMER SCALE: everything a step smaller, still fluid
+   ============================================================ */
+html { font-size: clamp(.875rem, .68rem + .38vw, 1.3rem); }
+body { font-size: 1rem; }
+.hero-title { font-size: clamp(2.2rem, 4.2vw, 5.2rem) !important; }
+.hero-desc { font-size: 1.05rem; }
+.hero-photo { width: clamp(130px, 15vw, 24rem); }
+.section-title { font-size: clamp(1.5rem, 2.2vw, 2.9rem); }
+.group-title { font-size: clamp(1rem, .95rem + .25vw, 1.2rem); }
+.section { padding: clamp(3rem, 6vw, 6rem) 0; }
+.section-header { margin-bottom: clamp(1.75rem, 3vw, 2.75rem); }
+.project-title { font-size: 1.04rem; }
+.project-desc { font-size: .92rem; }
+.tag, .skill-tag, .project-tags .tag { font-size: .78rem; }
+.project-tags { height: 1.75rem; }
+.nav-links a, .btn, .contact-btn, .btn-primary, [data-theme="light"] .btn-primary, [data-theme="dark"] .btn-primary,
+.filter-btn, .filter-btn:hover, .filter-btn.active, [data-theme="light"] .filter-btn.active { font-size: .78rem; }
+.btn, .contact-btn, .btn-primary, [data-theme="light"] .btn-primary, [data-theme="dark"] .btn-primary { padding: .7rem 1.3rem; }
+.hero-sub-title, .hero-label-text, .project-type, .skill-cat-title, .group-count, .exp-date, .exp-loc, .edu-period { font-size: .76rem; }
+.about-text p, .exp-bullets li { font-size: .96rem; }
+.edu-school, .exp-company { font-size: 1.04rem; }
+.edu-degree, .cert-name { font-size: .95rem; }
+.edu-courses, .edu-gpa, .cert-issuer, .cert-verify, .stat-label, .info-k, .info-v, .exp-skills-label { font-size: .82rem; }
+.container, .nav-container, .hero-inner { max-width: min(92vw, 72rem); }
+@media (min-width: 1280px) { .projects-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+
+/* ============================================================
+   COMPACT: smaller scale, tighter spacing, more on screen
+   ============================================================ */
+html { font-size: clamp(.8125rem, .62rem + .34vw, 1.15rem); }
+.container, .nav-container, .hero-inner { max-width: min(94vw, 84rem); }
+.navbar { padding: .7rem 0; }
+.hero { min-height: 0; padding-top: calc(3.2rem + clamp(1.5rem, 4vh, 3rem)); padding-bottom: clamp(1.75rem, 4vh, 3rem); }
+.hero-title { font-size: clamp(2rem, 3.6vw, 4.6rem) !important; }
+.hero-photo { width: clamp(120px, 12vw, 20rem); }
+.hero-cta { margin-top: 1.25rem; gap: .6rem; }
+.hero-desc { margin-bottom: 0; }
+.section { padding: clamp(1.75rem, 3.2vw, 3.25rem) 0; }
+.section-title { font-size: clamp(1.3rem, 1.8vw, 2.4rem); }
+.section-header { margin-bottom: clamp(1rem, 1.6vw, 1.6rem); }
+.project-filters { margin-bottom: 1.25rem; gap: 1.5rem; }
+.project-group { margin-bottom: clamp(1.5rem, 2.6vw, 2.5rem); }
+.group-head { margin-bottom: 1rem; padding-bottom: .6rem; }
+.projects-grid { gap: 1rem; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.project-thumb, .project-card:not(.has-image) .project-thumb { aspect-ratio: 2/1; }
+.project-body { padding: .7rem .85rem .8rem; }
+.skills-grid { gap: 1rem; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.skill-category { padding: .9rem 1rem; }
+.skill-cat-title { margin-bottom: .55rem; }
+.exp-item { padding: 1rem 0; }
+.edu-item { padding: .85rem 0; }
+.edu-logo { width: 3rem; height: 3rem; }
+.about-grid { gap: 2rem; }
+.btn, .contact-btn, .btn-primary, [data-theme="light"] .btn-primary, [data-theme="dark"] .btn-primary { padding: .55rem 1.05rem; min-height: 2.2rem; }
+@media (min-width: 1400px) { .projects-grid { grid-template-columns: repeat(5, minmax(0,1fr)); } }
+@media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } .skills-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 760px) { .projects-grid, .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 520px) { .projects-grid, .skills-grid { grid-template-columns: minmax(0,1fr); } }
+@media (pointer: coarse) { .btn, .contact-btn, .btn-primary { min-height: 2.75rem; } }
+
+/* live background sits behind every section */
+#techBg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.hero, .section, .about, .experience, .education, .skills, .projects, .certifications, .contact, .footer { background: transparent; }
+
+/* ============================================================
+   BALANCED: full-screen hero, comfortable spacing
+   ============================================================ */
+html { font-size: clamp(.9375rem, .82rem + .22vw, 1.2rem); }
+.container, .nav-container, .hero-inner { max-width: min(92vw, 1240px); }
+.navbar { padding: .9rem 0; }
+.hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding-top: 5rem; padding-bottom: 3rem; }
+.hero-inner { width: 100%; margin: 0 auto; }
+.hero-title { font-size: clamp(2.4rem, 5vw, 5.4rem) !important; }
+.hero-desc { font-size: 1.08rem; }
+.hero-photo { width: clamp(150px, 18vw, 22rem); }
+.hero-cta { margin-top: 1.75rem; gap: .75rem; }
+.section { padding: clamp(3rem, 5vw, 5rem) 0; }
+.section-title { font-size: clamp(1.6rem, 2.4vw, 2.6rem); }
+.section-header { margin-bottom: clamp(1.5rem, 2.4vw, 2.25rem); }
+.project-filters { margin-bottom: 2rem; gap: 1.75rem; }
+.project-group { margin-bottom: clamp(2.25rem, 4vw, 3.5rem); }
+.group-head { margin-bottom: 1.4rem; padding-bottom: .8rem; }
+.projects-grid { gap: 1.5rem; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.project-thumb, .project-card:not(.has-image) .project-thumb { aspect-ratio: 16/9; }
+.project-body { padding: .9rem 1rem 1rem; }
+.skills-grid { gap: 1.5rem; grid-template-columns: repeat(3, minmax(0,1fr)); }
+.skill-category { padding: 1.2rem 1.3rem; }
+.skill-cat-title { margin-bottom: .8rem; }
+.exp-item { padding: 1.4rem 0; }
+.edu-item { padding: 1.2rem 0; }
+.edu-logo { width: 3.5rem; height: 3.5rem; }
+.about-grid { gap: 3rem; }
+.btn, .contact-btn, .btn-primary, [data-theme="light"] .btn-primary, [data-theme="dark"] .btn-primary { padding: .7rem 1.3rem; min-height: 2.6rem; }
+@media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 800px) { .projects-grid, .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; } }
+@media (max-width: 540px) { .projects-grid, .skills-grid { grid-template-columns: minmax(0,1fr); } }
+
+/* muted page colours: softer contrast in both themes */
+[data-theme="dark"] {
+    --bg: #1e1e1d; --bg-alt: #1e1e1d; --card: #252524; --thumb: #262625;
+    --border: #333331; --border-h: #4e4d49;
+    --primary: #e2ddd2; --primary-2: #e2ddd2; --primary-bg: rgba(226,221,210,.07);
+    --text: #e2ddd2; --text-2: #bdb7ab; --text-3: #979186; --shade: #a39d91;
+}
+:root[data-theme="light"], :root:not([data-theme]) {
+    --bg: #e9e4d9; --bg-alt: #e9e4d9; --card: #f1ede3; --thumb: #e2dccf;
+    --border: #d8d0c0; --border-h: #aea592;
+    --primary: #2c2b26; --primary-2: #2c2b26; --primary-bg: rgba(44,43,38,.06);
+    --text: #2c2b26; --text-2: #4e4b44; --text-3: #68635a;
+}
+[data-theme="light"] { --text: #2c2b26; --text-2: #4e4b44; --text-3: #68635a; --border: #d8d0c0; --border-h: #aea592; }
+[data-theme="light"] .hero-title .gradient-text { color: #68635a; }
+
+/* ============================================================
+   VERTICAL LINES: page rails and column dividers
+   ============================================================ */
+@media (min-width: 901px) {
+    body::before {
+        content: ""; position: fixed; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); z-index: -1;
+        width: min(92vw, 1240px); pointer-events: none;
+        border-left: 1px solid var(--border); border-right: 1px solid var(--border);
+    }
+    .hero-photo-wrap { align-self: stretch; display: flex; align-items: center; padding-left: clamp(2rem, 5vw, 6rem); border-left: 1px solid var(--border); }
+    .about-grid > :last-child { padding-left: 3rem; border-left: 1px solid var(--border); align-self: stretch; }
+    .about-grid { gap: 3rem; }
+}
+
+/* ============================================================
+   TWO SPACES: a vertical line splits every section in two
+   ============================================================ */
+@media (min-width: 901px) {
+    :root { --split: clamp(11rem, 19vw, 17rem); --split-gap: clamp(2rem, 3.5vw, 3.5rem); }
+    .container, .nav-container, .hero-inner { max-width: min(92vw, 1320px); }
+    body::before { width: min(92vw, 1320px); }
+
+    /* hero: two equal halves */
+    .hero-inner { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 0; }
+    .hero-content { padding-right: clamp(2rem, 4vw, 4rem); }
+    .hero-photo-wrap { justify-content: center; padding-left: 0; }
+
+    /* sections: sticky title on the left, content on the right */
+    .section > .container { position: relative; display: grid; grid-template-columns: var(--split) minmax(0,1fr); column-gap: var(--split-gap); align-items: start; }
+    .section > .container > * { grid-column: 2; min-width: 0; }
+    .section > .container > .section-header { grid-column: 1; grid-row: 1 / span 12; position: sticky; top: 5.5rem; margin-bottom: 0; }
+    .section > .container::before {
+        content: ""; position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border);
+        left: calc(var(--gutter) + var(--split) + var(--split-gap) / 2);
+    }
+    .projects-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; }
+    .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; }
+    .about-grid > :last-child { padding-left: 2rem; }
+    .about-grid { gap: 2rem; }
+}

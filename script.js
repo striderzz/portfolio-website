@@ -1,93 +1,3 @@
-/* ============================================================
-   NEURAL NETWORK CANVAS
-   ============================================================ */
-(function () {
-    var canvas = document.getElementById('neuralCanvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var isMobile = window.innerWidth < 768;
-    var PARTICLE_COUNT = isMobile ? 40 : 75;
-    var MAX_DIST = isMobile ? 100 : 140;
-    var particles = [];
-    var animId;
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-
-    function Particle() {
-        this.reset = function () {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.4;
-            this.vy = (Math.random() - 0.5) * 0.4;
-            this.r = Math.random() * 1.5 + 0.6;
-            this.alpha = Math.random() * 0.45 + 0.15;
-        };
-        this.reset();
-        this.update = function () {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-        };
-        this.draw = function () {
-            var isLight = document.documentElement.dataset.theme === 'light';
-            var color = isLight ? '30,30,30' : '200,210,220';
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(' + color + ',' + this.alpha + ')';
-            ctx.fill();
-        };
-    }
-
-    function init() {
-        particles = [];
-        for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
-    }
-
-    function drawLines() {
-        var isLight = document.documentElement.dataset.theme === 'light';
-        var color = isLight ? '30,30,30' : '200,210,220';
-        for (var i = 0; i < particles.length; i++) {
-            for (var j = i + 1; j < particles.length; j++) {
-                var dx = particles[i].x - particles[j].x;
-                var dy = particles[i].y - particles[j].y;
-                var d = Math.sqrt(dx * dx + dy * dy);
-                if (d < MAX_DIST) {
-                    var a = (1 - d / MAX_DIST) * 0.22;
-                    ctx.beginPath();
-                    ctx.strokeStyle = 'rgba(' + color + ',' + a + ')';
-                    ctx.lineWidth = 0.5;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    function loop() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < particles.length; i++) { particles[i].update(); particles[i].draw(); }
-        drawLines();
-        animId = requestAnimationFrame(loop);
-    }
-
-    var resizeTimer;
-    window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () { resize(); init(); }, 200);
-    });
-
-    document.addEventListener('visibilitychange', function () {
-        if (document.hidden) cancelAnimationFrame(animId);
-        else loop();
-    });
-
-    resize(); init(); loop();
-}());
 
 /* ============================================================
    THEME TOGGLE
@@ -304,5 +214,102 @@ document.querySelectorAll('.project-desc, .project-title').forEach(function (el)
         c.addEventListener('pointerleave', function () {
             c.style.removeProperty('--rx'); c.style.removeProperty('--ry');
         });
+    });
+}());
+
+
+/* ============================================================
+   LIVE BACKGROUND: drifting dots that connect, site-wide
+   ============================================================ */
+(function () {
+    var canvas = document.getElementById('techBg');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dots = [], w = 0, h = 0, dpr = 1, link = 130, rgb = '244,239,228', dotA = .5, lineA = .2;
+    var pointer = { x: -9999, y: -9999 };
+    var last = 0, raf = 0;
+
+    function theme() {
+        var light = document.documentElement.dataset.theme === 'light';
+        rgb = light ? '44,43,38' : '226,221,210';
+        dotA = light ? .34 : .5;
+        lineA = light ? .15 : .2;
+    }
+    function seed() {
+        var want = Math.max(36, Math.min(130, Math.round(w * h / 13000)));
+        link = w < 768 ? 95 : 130;
+        dots = [];
+        for (var i = 0; i < want; i++) {
+            dots.push({
+                x: Math.random() * w, y: Math.random() * h,
+                vx: (Math.random() - .5) * .34, vy: (Math.random() - .5) * .34,
+                r: Math.random() * 1.1 + .9
+            });
+        }
+    }
+    function size() {
+        dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        w = window.innerWidth; h = window.innerHeight;
+        canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function draw() {
+        ctx.clearRect(0, 0, w, h);
+        var i, k, a, b, dx, dy, d;
+        for (i = 0; i < dots.length; i++) {
+            a = dots[i];
+            for (k = i + 1; k < dots.length; k++) {
+                b = dots[k];
+                dx = a.x - b.x; dy = a.y - b.y;
+                if (dx > link || dx < -link || dy > link || dy < -link) continue;
+                d = Math.sqrt(dx * dx + dy * dy);
+                if (d < link) {
+                    ctx.strokeStyle = 'rgba(' + rgb + ',' + (lineA * (1 - d / link)).toFixed(3) + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+                }
+            }
+            dx = a.x - pointer.x; dy = a.y - pointer.y;
+            d = Math.sqrt(dx * dx + dy * dy);
+            if (d < link * 1.5) {
+                ctx.strokeStyle = 'rgba(' + rgb + ',' + (lineA * 1.8 * (1 - d / (link * 1.5))).toFixed(3) + ')';
+                ctx.lineWidth = 1;
+                ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(pointer.x, pointer.y); ctx.stroke();
+            }
+            ctx.fillStyle = 'rgba(' + rgb + ',' + dotA + ')';
+            ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+        }
+    }
+    function step() {
+        for (var i = 0; i < dots.length; i++) {
+            var p = dots[i];
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < -10) p.x = w + 10; else if (p.x > w + 10) p.x = -10;
+            if (p.y < -10) p.y = h + 10; else if (p.y > h + 10) p.y = -10;
+        }
+    }
+    function loop(t) {
+        raf = requestAnimationFrame(loop);
+        if (t - last < 32) return;   /* about 30 frames a second */
+        last = t;
+        step(); draw();
+    }
+    function start() { cancelAnimationFrame(raf); if (!calm) raf = requestAnimationFrame(loop); }
+
+    theme(); size(); seed(); draw(); start();
+
+    var timer;
+    window.addEventListener('resize', function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () { size(); seed(); draw(); }, 200);
+    });
+    new MutationObserver(function () { theme(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    if (window.matchMedia('(hover: hover)').matches) {
+        window.addEventListener('pointermove', function (e) { pointer.x = e.clientX; pointer.y = e.clientY; }, { passive: true });
+        document.addEventListener('pointerleave', function () { pointer.x = pointer.y = -9999; });
+    }
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) cancelAnimationFrame(raf); else start();
     });
 }());
