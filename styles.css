@@ -609,7 +609,6 @@ body { font-size: 15.5px; }
 }
 .section:last-of-type { padding-bottom: 2.5rem; }
 .section-header { margin-bottom: 1.5rem; }
-.section-title { font-size: 1.65rem !important; }
 .section-divider { margin-top: .6rem; }
 
 /* inner tiles: rounded, bordered, with breathing room */
@@ -628,7 +627,6 @@ body { font-size: 15.5px; }
 @media (max-width: 640px) {
     .section > .container { border-radius: 14px; padding: 1.4rem 1.1rem; margin: 0 .6rem; }
     .section { padding: .7rem 0; }
-    .section-title { font-size: 1.4rem !important; }
 }
 /* hacker: lime terminal green on grey and black */
 
@@ -1455,3 +1453,11 @@ html { font-size: clamp(.9375rem, .82rem + .22vw, 1.2rem); }
     .projects-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; }
     .skills-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
 }
+
+/* shorter project cards, quieter left column */
+.project-thumb, .project-card:not(.has-image) .project-thumb { aspect-ratio: 3/1; }
+.project-desc { -webkit-line-clamp: 2; line-clamp: 2; height: 3em; }
+.project-body { padding: .55rem .75rem .65rem; }
+.project-meta { min-height: 1.5rem; }
+.section-title { font-size: clamp(1.05rem, 1.35vw, 1.5rem); letter-spacing: .1em; }
+@media (min-width: 901px) { :root { --split: clamp(8.5rem, 13vw, 12rem); --split-gap: clamp(1.5rem, 2.6vw, 2.75rem); } }
