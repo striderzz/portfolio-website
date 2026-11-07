@@ -1461,3 +1461,41 @@ html { font-size: clamp(.9375rem, .82rem + .22vw, 1.2rem); }
 .project-meta { min-height: 1.5rem; }
 .section-title { font-size: clamp(1.05rem, 1.35vw, 1.5rem); letter-spacing: .1em; }
 @media (min-width: 901px) { :root { --split: clamp(8.5rem, 13vw, 12rem); --split-gap: clamp(1.5rem, 2.6vw, 2.75rem); } }
+
+/* ============================================================
+   30 / 70 SPLIT
+   ============================================================ */
+.section-title { font-size: clamp(.95rem, 1.1vw, 1.2rem); letter-spacing: .12em; }
+@media (min-width: 901px) {
+    :root { --split-gap: clamp(1.5rem, 2.4vw, 2.5rem); }
+    .section > .container { grid-template-columns: minmax(0,3fr) minmax(0,7fr); column-gap: 0; }
+    .section > .container > *:not(.section-header) { margin-left: var(--split-gap); }
+    .section > .container::before { left: calc(var(--gutter) + (100% - 2 * var(--gutter)) * .3); }
+    .projects-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+    .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .about-grid { grid-template-columns: minmax(0,1fr) 16rem; gap: 1.75rem; }
+    .about-grid > :last-child { padding-left: 0; border-left: 0; align-self: start; }
+}
+@media (min-width: 1600px) {
+    .projects-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .skills-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+.info-v { min-width: 0; overflow-wrap: anywhere; text-align: right; }
+.info-row { gap: .75rem; }
+
+/* About details: a clean grid under the text */
+.about-grid, .about-grid.reveal { display: block; }
+.about-grid > :last-child { margin-top: 1.5rem; }
+.info-card {
+    display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; overflow: hidden;
+    background: var(--border); border: 1px solid var(--border); border-image: none; border-radius: 12px; box-shadow: none;
+}
+.info-row {
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: .3rem;
+    padding: .8rem 1rem; background: var(--card); border: 0; min-width: 0;
+}
+.info-k { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); }
+.info-v, .info-v a { font-size: .9rem; font-weight: 500; text-align: left; color: var(--text); overflow-wrap: anywhere; }
+.info-row .status-badge { margin: 0; }
+@media (max-width: 620px) { .info-card { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 400px) { .info-card { grid-template-columns: minmax(0,1fr); } }
