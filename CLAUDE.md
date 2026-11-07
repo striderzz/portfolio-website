@@ -52,7 +52,7 @@ Preserve these decisions:
 * No harsh neon colors
 * No pure black background
 * Do not change font unless asked
-* Fonts: Inter for body text, Montserrat bold for headings
+* Font: Montserrat throughout (ExtraBold and Bold for headings, Regular for text)
 * Preserve neural canvas / soft AI background if added
 
 ## Required Sections
@@ -140,11 +140,12 @@ Unity, C#, 2D/3D Game Development, Game Physics, Animator, Blend Trees, Mobile G
 Add filter buttons:
 
 * All
-* AI
-* Software
-* Game
+* Generative AI
+* Machine Learning
+* Software Engineering
+* Game Development
 
-Within each category, the most advanced projects go first.
+Within each category, order by production readiness, then technical complexity, then recency.
 
 ## Project Categories
 

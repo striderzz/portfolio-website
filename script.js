@@ -95,24 +95,16 @@
 (function () {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
-    var NAMES = { light: 'Light', dark: 'Dark', hacker: 'Hacker', blue: 'Blue', purple: 'Purple', orange: 'Orange' };
-    var menu = document.getElementById('themeMenu');
     var label = btn.querySelector('.theme-name');
     function apply(t) {
         document.documentElement.dataset.theme = t;
         try { localStorage.setItem('theme', t); } catch (e) {}
-        if (label) label.textContent = NAMES[t] || t;
-        menu.querySelectorAll('[data-theme-pick]').forEach(function (b) { b.classList.toggle('active', b.dataset.themePick === t); });
+        if (label) label.textContent = t === 'dark' ? 'Dark' : 'Light';
     }
-    function toggle(open) { menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
-    apply(document.documentElement.dataset.theme || 'dark');
-    btn.addEventListener('click', function (e) { e.stopPropagation(); toggle(!menu.classList.contains('open')); });
-    menu.addEventListener('click', function (e) {
-        var b = e.target.closest('[data-theme-pick]');
-        if (b) { apply(b.dataset.themePick); toggle(false); }
+    apply(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+    btn.addEventListener('click', function () {
+        apply(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
     });
-    document.addEventListener('click', function () { toggle(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle(false); });
 }());
 
 /* ============================================================
@@ -135,40 +127,6 @@
     links.querySelectorAll('a').forEach(function (a) {
         a.addEventListener('click', function () { links.classList.remove('open'); });
     });
-}());
-
-/* ============================================================
-   TYPING EFFECT
-   ============================================================ */
-(function () {
-    var phrases = [
-        'Machine Learning Engineer',
-        'LLM & Generative AI Systems',
-        'AI Agent Developer',
-        'RAG Pipeline Engineer',
-        'Deep Learning Engineer',
-    ];
-    var el = document.getElementById('typingText');
-    if (!el) return;
-    var phraseIdx = 0, charIdx = 0, deleting = false;
-
-    function tick() {
-        var current = phrases[phraseIdx];
-        if (!deleting) {
-            el.textContent = current.slice(0, ++charIdx);
-            if (charIdx === current.length) { deleting = true; return setTimeout(tick, 2000); }
-            setTimeout(tick, 80);
-        } else {
-            el.textContent = current.slice(0, --charIdx);
-            if (charIdx === 0) {
-                deleting = false;
-                phraseIdx = (phraseIdx + 1) % phrases.length;
-                return setTimeout(tick, 380);
-            }
-            setTimeout(tick, 50);
-        }
-    }
-    setTimeout(tick, 700);
 }());
 
 /* ============================================================
@@ -301,4 +259,50 @@ document.querySelectorAll('.project-desc, .project-title').forEach(function (el)
     window.addEventListener('scroll', function () {
         if (!queued) { queued = true; requestAnimationFrame(paint); }
     }, { passive: true });
+}());
+
+
+/* ============================================================
+   RESUME ROLE MENU
+   ============================================================ */
+(function () {
+    var menus = document.querySelectorAll('.resume-menu');
+    function closeAll(except) {
+        menus.forEach(function (m) { if (m !== except) m.removeAttribute('open'); });
+    }
+    menus.forEach(function (m) {
+        m.addEventListener('toggle', function () { if (m.open) closeAll(m); });
+        m.querySelector('.resume-list').addEventListener('click', function () { m.removeAttribute('open'); });
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.resume-menu')) closeAll(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+}());
+
+
+/* ============================================================
+   CARD TILT, STAGGER, HOVER TIMING
+   ============================================================ */
+(function () {
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    ['.skills-grid', '.edu-list', '.cert-list'].forEach(function (sel) {
+        var box = document.querySelector(sel);
+        if (!box) return;
+        Array.prototype.forEach.call(box.querySelectorAll('.reveal'), function (el, i) { el.dataset.delay = (i % 3) * 70; });
+    });
+    /* a reveal delay must not linger and slow hover effects */
+    document.addEventListener('transitionend', function (e) {
+        var t = e.target;
+        if (t.classList && t.classList.contains('visible') && t.style.transitionDelay) t.style.transitionDelay = '';
+    });
+    if (calm || !window.matchMedia('(hover: hover)').matches) return;
+    document.querySelectorAll('.project-card').forEach(function (c) {
+        c.addEventListener('pointermove', function (e) {
+            var r = c.getBoundingClientRect();
+            c.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 5 + 'deg');
+            c.style.setProperty('--rx', (.5 - (e.clientY - r.top) / r.height) * 5 + 'deg');
+        });
+        c.addEventListener('pointerleave', function () {
+            c.style.removeProperty('--rx'); c.style.removeProperty('--ry');
+        });
+    });
 }());
