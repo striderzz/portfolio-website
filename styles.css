@@ -1441,3 +1441,17 @@ html { font-size: clamp(.9375rem, .82rem + .22vw, 1.2rem); }
     .about-grid > :last-child { padding-left: 2rem; }
     .about-grid { gap: 2rem; }
 }
+
+/* smaller cards */
+.project-thumb, .project-card:not(.has-image) .project-thumb { aspect-ratio: 2/1; }
+.project-body { padding: .65rem .8rem .75rem; }
+.project-meta { margin-bottom: .15rem; }
+.project-title { font-size: .96rem; margin-bottom: .25rem; }
+.project-desc { font-size: .84rem; margin-bottom: .45rem; }
+.tag, .project-tags .tag { font-size: .72rem; padding: .1rem .4rem; }
+.project-tags { height: 1.5rem; }
+.skill-category { padding: .95rem 1.05rem; }
+@media (min-width: 1280px) {
+    .projects-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; }
+    .skills-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+}
