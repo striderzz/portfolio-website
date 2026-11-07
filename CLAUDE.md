@@ -52,7 +52,9 @@ Preserve these decisions:
 * No harsh neon colors
 * No pure black background
 * Do not change font unless asked
-* Font: Montserrat throughout (ExtraBold and Bold for headings, Regular for text)
+* Font: Barlow throughout (uppercase, wide-spaced headings and labels; Regular for text)
+* Look: minimal and bold, neutral light and dark themes only, no accent colours
+* Generated assets come in -light and -dark versions (assets/covers, assets/icons, assets/panels)
 * Preserve neural canvas / soft AI background if added
 
 ## Required Sections
