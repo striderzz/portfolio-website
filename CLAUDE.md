@@ -52,7 +52,7 @@ Preserve these decisions:
 * No harsh neon colors
 * No pure black background
 * Do not change font unless asked
-* Preferred fonts: Inter, Poppins, Manrope, or Nunito Sans
+* Fonts: Inter for body text, Montserrat bold for headings
 * Preserve neural canvas / soft AI background if added
 
 ## Required Sections
@@ -140,11 +140,11 @@ Unity, C#, 2D/3D Game Development, Game Physics, Animator, Blend Trees, Mobile G
 Add filter buttons:
 
 * All
-* AI/ML
-* SDE
-* Game Development
-* DevOps
-* GenAI
+* AI
+* Software
+* Game
+
+Within each category, the most advanced projects go first.
 
 ## Project Categories
 

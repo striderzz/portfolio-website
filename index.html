@@ -9,13 +9,11 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=16">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
+<div id="scrollProgress" aria-hidden="true"></div>
 <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -76,6 +74,10 @@
                 <a href="https://github.com/striderzz" class="btn btn-secondary" target="_blank" rel="noopener">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                     GitHub
+                </a>
+                <a href="https://leetcode.com/u/striderzz/" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+                    LeetCode
                 </a>
                 <a href="#contact" class="btn btn-secondary">Contact</a>
             </div>
@@ -353,395 +355,418 @@
 
         <div class="project-filters reveal">
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="genai">GenAI</button>
-            <button class="filter-btn" data-filter="aiml">AI / ML</button>
-            <button class="filter-btn" data-filter="sde">Software</button>
-            <button class="filter-btn" data-filter="gamedev">Game Dev</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="software">Software</button>
+            <button class="filter-btn" data-filter="game">Game</button>
         </div>
 
-        <div class="projects-grid">
-
-            <!-- ── GenAI ── -->
-            <div class="project-card reveal" data-category="genai">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="9" height="18"/><rect x="13" y="9" width="7" height="12"/><path d="M7 7h1M10 7h1M7 11h1M10 11h1M7 15h1M10 15h1M16 13h1M16 17h1M2 21h20"/></svg>
-                </div>
+        <div class="project-group" data-group="ai">
+            <div class="group-head reveal"><h3 class="group-title">AI</h3><span class="group-sub">Agents, RAG and machine learning</span><span class="group-count">14</span></div>
+            <div class="projects-grid">
+            <article class="project-card reveal featured has-image" data-category="ai">
+                <div class="project-thumb"><img src="assets/projects/jobquest.webp" alt="JobQuest.AI screenshot" loading="lazy" decoding="async"></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">GenAI · Featured</span>
-                        <a href="https://github.com/striderzz/JobQuest.AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/JobQuest.AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </a>
                         <a href="https://github.com/striderzz/JobQuest.AI/releases/latest" class="project-link" target="_blank" rel="noopener" aria-label="Download installer">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">JobQuest.AI</div>
+                    <h4 class="project-title">JobQuest.AI</h4>
                     <div class="project-desc">Desktop AI job-hunt co-pilot: ranks entry-level jobs from 140+ boards against your resume, with a 10-provider LLM layer, application tracker and analytics dashboard, cover letters, a cold-email desk that reads screenshots, and review-first Gmail sync. Ships as a Windows installer.</div>
                     <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">LLM Agents</span><span class="tag">Multi-LLM</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">PyInstaller</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="genai">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="ai">
+                <div class="project-thumb"><img src="assets/projects/nutricoach.webp" alt="NutriCoach.AI screenshot" loading="lazy" decoding="async"></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">GenAI</span>
-                        <a href="https://github.com/striderzz/langgraph-multiagent-nutrition-coach" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/NutriCoach.AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
                     </div>
-                    <div class="project-title">NutriCoach Multi-Agent</div>
-                    <div class="project-desc">5 ReAct agents with GPT-4o-mini and Critic-Revise feedback loop. Live Flask SSE streaming of Think-Act-Observe traces per agent.</div>
-                    <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">GPT-4o</span><span class="tag">Flask SSE</span><span class="tag">ReAct</span></div>
+                    <h4 class="project-title">NutriCoach.AI</h4>
+                    <div class="project-desc">Seven LangGraph ReAct agents turn a profile into calorie targets, a meal week and a training plan, streamed live over SSE. Works with any LLM provider or fully offline.</div>
+                    <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">Multi-Agent</span><span class="tag">Flask SSE</span><span class="tag">Multi-LLM</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="genai">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">GenAI</span>
-                        <a href="https://github.com/striderzz/AI-Agent-Langraph" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/RAG_Project1" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
                     </div>
-                    <div class="project-title">ReAct AI Agent</div>
+                    <h4 class="project-title">RAG Document QA</h4>
+                    <div class="project-desc">Ask questions over your PDFs: LangChain and ChromaDB retrieval with Hugging Face embeddings and Google Gemini answers.</div>
+                    <div class="project-tags"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">ChromaDB</span><span class="tag">Gemini</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/AI-Agent-Langraph" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title">ReAct AI Agent</h4>
                     <div class="project-desc">LangGraph + GPT-4o-mini + Tavily search agent with live-streaming Bootstrap UI showing every reasoning step and tool call in real time.</div>
                     <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">GPT-4o</span><span class="tag">Tavily</span><span class="tag">Streaming</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="genai">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">GenAI</span>
-                        <a href="https://github.com/striderzz/SQL_AI_AGENT" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/SQL_AI_AGENT" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">SQL AI Agent</div>
+                    <h4 class="project-title">SQL AI Agent</h4>
                     <div class="project-desc">Converts natural language questions to SQL and queries the Chinook music database using Google Gemini and LangChain tool-use.</div>
                     <div class="project-tags"><span class="tag">Gemini</span><span class="tag">LangChain</span><span class="tag">SQL</span><span class="tag">Python</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="genai">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">GenAI</span>
-                        <a href="https://github.com/striderzz/Finance-Tracker-App-AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Finance-Tracker-App-AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">AI Finance Tracker</div>
+                    <h4 class="project-title">AI Finance Tracker</h4>
                     <div class="project-desc">Full-stack expense tracking app with budget management, charts, database views, and AI-generated financial insights and recommendations.</div>
                     <div class="project-tags"><span class="tag">Flask</span><span class="tag">OpenAI</span><span class="tag">PostgreSQL</span><span class="tag">Charts</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="genai">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/><path d="M9 5v14"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/><path d="M9 5v14"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">GenAI</span>
-                        <a href="https://github.com/striderzz/Math-AI-Agent-Langraph" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Generative AI</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Math-AI-Agent-Langraph" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">Math AI Agent</div>
+                    <h4 class="project-title">Math AI Agent</h4>
                     <div class="project-desc">Deterministic LangGraph agent that parses natural-language math queries, runs tool-based operations, and returns structured JSON. Production-style state orchestration.</div>
                     <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">Tool Use</span><span class="tag">JSON</span><span class="tag">Python</span></div>
                 </div>
-            </div>
-
-            <!-- ── AI / ML ── -->
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/Heart-Disease-Prediction-using-Deep-Learning" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Heart-Disease-Prediction-using-Deep-Learning" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">Heart Disease — Deep Learning</div>
+                    <h4 class="project-title">Heart Disease — Deep Learning</h4>
                     <div class="project-desc">Feedforward Neural Network on UCI Cleveland Heart Disease dataset. Full pipeline: preprocessing, feature scaling, training, and multi-metric evaluation.</div>
                     <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">FFN</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/ML3-CNN-MLP-CIFARMNIST" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/PyTorch-Transfer-Learning" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">MLP vs CNN — MNIST/CIFAR</div>
-                    <div class="project-desc">PyTorch MLP and CNN evaluated on MNIST (99%+ acc) and CIFAR-10 (~78% acc). 30+ hyperparameter experiments with BatchNorm, Dropout, SGD/Adam.</div>
-                    <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">MNIST</span><span class="tag">CIFAR-10</span></div>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
-                </div>
-                <div class="project-body">
-                    <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/Car-Price-Prediction-ML-Flask-Webapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
-                    </div>
-                    <div class="project-title">Car Price Prediction</div>
-                    <div class="project-desc">Linear Regression model deployed as a Flask web app for real-time car price prediction. R² score 0.85. Users input car features and get instant estimates.</div>
-                    <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">Flask</span><span class="tag">Regression</span><span class="tag">Python</span></div>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div class="project-body">
-                    <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/PyTorch-Transfer-Learning" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
-                    </div>
-                    <div class="project-title">Transfer Learning — EfficientNet</div>
+                    <h4 class="project-title">Transfer Learning — EfficientNet</h4>
                     <div class="project-desc">Food image classifier using EfficientNet-B0 transfer learning in PyTorch to classify pizza, steak, and sushi with high accuracy on limited data.</div>
                     <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">EfficientNet</span><span class="tag">Transfer Learning</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><circle cx="15" cy="15" r="2"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/CNN_Image_Classification_MNIST" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/ML3-CNN-MLP-CIFARMNIST" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">CNN Image Classifier</div>
+                    <h4 class="project-title">MLP vs CNN — MNIST/CIFAR</h4>
+                    <div class="project-desc">PyTorch MLP and CNN evaluated on MNIST (99%+ acc) and CIFAR-10 (~78% acc). 30+ hyperparameter experiments with BatchNorm, Dropout, SGD/Adam.</div>
+                    <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">MNIST</span><span class="tag">CIFAR-10</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><circle cx="15" cy="15" r="2"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/CNN_Image_Classification_MNIST" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title">CNN Image Classifier</h4>
                     <div class="project-desc">Single-page Flask app serving a TinyVGG-style CNN to classify FashionMNIST, with live metrics for dataset sizes, params, and accuracy plus a compact training script.</div>
                     <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">TinyVGG</span><span class="tag">Flask</span><span class="tag">FashionMNIST</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/><circle cx="17" cy="16" r="2.5"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="20" r="2"/><path d="M12 6v4M12 10l-6 8M12 10l6 8"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/ML4-K-Means-Clustering-and-GMM" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/ML2-Tree-Ensembles-Evaluation" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">K-Means &amp; GMM Clustering</div>
-                    <div class="project-desc">Unsupervised learning experiments using K-Means and Gaussian Mixture Models (EM) on synthetic datasets, with visual and quantitative cluster evaluation.</div>
-                    <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">K-Means</span><span class="tag">GMM</span><span class="tag">Matplotlib</span></div>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="aiml">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="20" r="2"/><path d="M12 6v4M12 10l-6 8M12 10l6 8"/></svg>
-                </div>
-                <div class="project-body">
-                    <div class="project-meta">
-                        <span class="project-type">AI / ML</span>
-                        <a href="https://github.com/striderzz/ML2-Tree-Ensembles-Evaluation" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
-                    </div>
-                    <div class="project-title">Tree Ensembles Evaluation</div>
+                    <h4 class="project-title">Tree Ensembles Evaluation</h4>
                     <div class="project-desc">Systematic comparison of Decision Tree, Bagging, Random Forest, and Gradient Boosting on Boolean datasets and MNIST, with reproducible tuning and metrics logging.</div>
                     <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">Random Forest</span><span class="tag">Boosting</span><span class="tag">Python</span></div>
                 </div>
-            </div>
-
-            <!-- ── SDE ── -->
-            <div class="project-card reveal" data-category="sde">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/><circle cx="17" cy="16" r="2.5"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">SDE</span>
-                        <a href="https://github.com/striderzz/Flask_Sockets_Realtime_Chatapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/ML4-K-Means-Clustering-and-GMM" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">Real-Time Chat App</div>
-                    <div class="project-desc">Real-time chat rooms with Flask-SocketIO. Users create or join private rooms via unique codes. Instant WebSocket-based message exchange.</div>
-                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">SocketIO</span><span class="tag">WebSocket</span><span class="tag">Python</span></div>
+                    <h4 class="project-title">K-Means &amp; GMM Clustering</h4>
+                    <div class="project-desc">Unsupervised learning experiments using K-Means and Gaussian Mixture Models (EM) on synthetic datasets, with visual and quantitative cluster evaluation.</div>
+                    <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">K-Means</span><span class="tag">GMM</span><span class="tag">Matplotlib</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="sde">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">SDE</span>
-                        <a href="https://github.com/striderzz/Upcoming_Games_Scraper_App" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Machine Learning</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Car-Price-Prediction-ML-Flask-Webapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">Upcoming Games Scraper</div>
-                    <div class="project-desc">Flask app scraping Top 30 upcoming AAA games with trailers, genre filters, search, and dark/light theme. Live game data from the web.</div>
-                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">BeautifulSoup</span><span class="tag">Scraping</span><span class="tag">JS</span></div>
+                    <h4 class="project-title">Car Price Prediction</h4>
+                    <div class="project-desc">Linear Regression model deployed as a Flask web app for real-time car price prediction. R² score 0.85. Users input car features and get instant estimates.</div>
+                    <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">Flask</span><span class="tag">Regression</span><span class="tag">Python</span></div>
                 </div>
+            </article>
             </div>
+        </div>
 
-            <div class="project-card reveal" data-category="sde">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
+        <div class="project-group" data-group="software">
+            <div class="group-head reveal"><h3 class="group-title">Software</h3><span class="group-sub">Full-stack apps and cloud deployments</span><span class="group-count">8</span></div>
+            <div class="projects-grid">
+            <article class="project-card reveal featured has-image" data-category="software">
+                <div class="project-thumb"><img src="assets/projects/recipe.webp" alt="Recipe Manager screenshot" loading="lazy" decoding="async"></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">SDE</span>
-                        <a href="https://github.com/striderzz/recipe-manager-flask-mongodb-aws" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/recipe-manager-flask-mongodb-aws" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
                     </div>
-                    <div class="project-title">Recipe Manager</div>
-                    <div class="project-desc">Full-stack recipe manager with Flask, MongoDB Atlas, and Bootstrap: user authentication and full CRUD, containerised with Docker and deployed on AWS.</div>
-                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">Auth</span><span class="tag">Bootstrap</span></div>
+                    <h4 class="project-title">Recipe Manager</h4>
+                    <div class="project-desc">Full-stack Flask and MongoDB recipe manager, containerized with Docker and deployed on AWS ECS Fargate.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">AWS ECS</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="sde">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 1 4 0"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="software">
+                <div class="project-thumb"><img src="assets/projects/notes-aws.webp" alt="Flask Notes on AWS screenshot" loading="lazy" decoding="async"></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">SDE</span>
-                        <a href="https://github.com/striderzz/StockScope" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/flask-notes-app" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
                     </div>
-                    <div class="project-title">StockScope</div>
-                    <div class="project-desc">Flask web app to manage and calculate stock prices using MongoDB. REST APIs for adding, retrieving, and computing stock portfolio data.</div>
-                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">REST API</span><span class="tag">Python</span></div>
+                    <h4 class="project-title">Flask Notes on AWS</h4>
+                    <div class="project-desc">Multi-user notes app built with Flask and SQLAlchemy, containerized with Docker and deployed to AWS ECS Fargate via ECR.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">Docker</span><span class="tag">AWS ECS</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="sde">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="software">
+                <div class="project-thumb"><img src="assets/projects/mern.webp" alt="MERN Notes App screenshot" loading="lazy" decoding="async"></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">SDE</span>
-                        <a href="https://github.com/striderzz/MERN-Notes-App" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/MERN-Notes-App" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">MERN Notes App</div>
+                    <h4 class="project-title">MERN Notes App</h4>
                     <div class="project-desc">Google Keep-style notes app on the MERN stack — React + Vite, Express, MongoDB Atlas. Light/dark/neon themes, Framer Motion animations, masonry grid, pinned notes, live search.</div>
                     <div class="project-tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Framer Motion</span></div>
                 </div>
-            </div>
-
-            <!-- ── Game Dev ── -->
-            <div class="project-card reveal" data-category="gamedev">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M7 12h.01M17 12h.01M12 8v8"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="software">
+                <div class="project-thumb"><img src="assets/projects/chat.webp" alt="Real-Time Chat App screenshot" loading="lazy" decoding="async"></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">Game Dev</span>
-                        <a href="https://github.com/striderzz/Arcade-Racing-Game-Unity" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Flask_Sockets_Realtime_Chatapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">Arcade Racing Game</div>
+                    <h4 class="project-title">Real-Time Chat App</h4>
+                    <div class="project-desc">Real-time chat rooms with Flask-SocketIO. Users create or join private rooms via unique codes. Instant WebSocket-based message exchange.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">SocketIO</span><span class="tag">WebSocket</span><span class="tag">Python</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="software">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Upcoming_Games_Scraper_App" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title">Upcoming Games Scraper</h4>
+                    <div class="project-desc">Flask app scraping Top 30 upcoming AAA games with trailers, genre filters, search, and dark/light theme. Live game data from the web.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">BeautifulSoup</span><span class="tag">Scraping</span><span class="tag">JS</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="software">
+                <div class="project-thumb"><img src="assets/projects/books.webp" alt="Book Recommender screenshot" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/BookRecmd_App" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
+                    </div>
+                    <h4 class="project-title">Book Recommender</h4>
+                    <div class="project-desc">Gothic-styled book recommendation app with login, ratings and smart recommendations through the Open Library API.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">Open Library API</span><span class="tag">Auth</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="software">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 1 4 0"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/StockScope" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title">StockScope</h4>
+                    <div class="project-desc">Flask web app to manage and calculate stock prices using MongoDB. REST APIs for adding, retrieving, and computing stock portfolio data.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">REST API</span><span class="tag">Python</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="software">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 1 4 0"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/FileSorterApp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
+                    </div>
+                    <h4 class="project-title">File Sorter</h4>
+                    <div class="project-desc">Offline file sorter with a CLI and Tkinter GUI that sorts files into category folders by extension.</div>
+                    <div class="project-tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">CLI</span></div>
+                </div>
+            </article>
+            </div>
+        </div>
+
+        <div class="project-group" data-group="game">
+            <div class="group-head reveal"><h3 class="group-title">Game</h3><span class="group-sub">Built in Unity with C#</span><span class="group-count">7</span></div>
+            <div class="projects-grid">
+            <article class="project-card reveal featured" data-category="game">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M7 12h.01M17 12h.01M12 8v8"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Arcade-Racing-Game-Unity" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title">Arcade Racing Game</h4>
                     <div class="project-desc">3D arcade car game built in Unity with physics-based driving, track design, lap timing, and AI opponent logic written in C#.</div>
                     <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics3D</span><span class="tag">AI</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="gamedev">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 17 5 5 19 5 19 17"/><polyline points="1 17 23 17"/><line x1="9" y1="17" x2="9" y2="13"/><line x1="15" y1="17" x2="15" y2="8"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="game">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 17 5 5 19 5 19 17"/><polyline points="1 17 23 17"/><line x1="9" y1="17" x2="9" y2="13"/><line x1="15" y1="17" x2="15" y2="8"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">Game Dev</span>
-                        <a href="https://github.com/striderzz/Unity-Endless-Runner-Procedural-Generation" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Unity-Endless-Runner-Procedural-Generation" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">Endless Runner — Proc. Gen</div>
+                    <h4 class="project-title">Endless Runner — Proc. Gen</h4>
                     <div class="project-desc">Mobile Unity endless runner with procedural level generation. Dynamic obstacle spawning, speed scaling, and optimized for mobile performance.</div>
                     <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Procedural</span><span class="tag">Mobile</span></div>
                 </div>
-            </div>
-
-            <div class="project-card reveal" data-category="gamedev">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
+            </article>
+            <article class="project-card reveal" data-category="game">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h6v-4h5v-5h5V6h4"/><circle cx="6" cy="12" r="2"/></svg></div>
                 <div class="project-body">
                     <div class="project-meta">
-                        <span class="project-type">Game Dev</span>
-                        <a href="https://github.com/striderzz/2D-TopDown-RPG" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/2D-Platformer-Unity" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
+                        </a></span>
                     </div>
-                    <div class="project-title">2D Top-Down RPG</div>
-                    <div class="project-desc">Zelda-style 2D top-down action RPG in Unity. Features combat system, tilemap design, enemy AI, and scene management built entirely in C#.</div>
-                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Tilemap</span><span class="tag">AI</span></div>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="gamedev">
-                <div class="project-thumb">
-                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h6v-4h5v-5h5V6h4"/><circle cx="6" cy="12" r="2"/></svg>
-                </div>
-                <div class="project-body">
-                    <div class="project-meta">
-                        <span class="project-type">Game Dev</span>
-                        <a href="https://github.com/striderzz/2D-Platformer-Unity" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        </a>
-                    </div>
-                    <div class="project-title">2D Platformer — Unity</div>
+                    <h4 class="project-title">2D Platformer — Unity</h4>
                     <div class="project-desc">2D platformer game and starter template built in Unity with C#.</div>
                     <div class="project-tags"><span class="tag">Unity 2D</span><span class="tag">C#</span><span class="tag">Platformer</span></div>
                 </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="game">
+                <div class="project-thumb"><img src="assets/projects/snake.webp" alt="Snake 3D screenshot" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Snake-Game-Unity-Project" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
+                    </div>
+                    <h4 class="project-title">Snake 3D</h4>
+                    <div class="project-desc">The classic Snake rebuilt in 3D in Unity: grow the snake, navigate obstacles and explore the environment. Full source available.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">3D</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="game">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/2D-TopDown-RPG" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title">2D Top-Down RPG</h4>
+                    <div class="project-desc">Zelda-style 2D top-down action RPG in Unity. Features combat system, tilemap design, enemy AI, and scene management built entirely in C#.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Tilemap</span><span class="tag">AI</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="game">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Hack_and_Slash_2D" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
+                    </div>
+                    <h4 class="project-title">2D Hack and Slash</h4>
+                    <div class="project-desc">Hack and slash action game built in Unity.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">2D</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal" data-category="game">
+                <div class="project-thumb"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Game</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/TopDownTank" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
+                    </div>
+                    <h4 class="project-title">Top-Down Tank</h4>
+                    <div class="project-desc">Top-down tank controller made in Unity.</div>
+                    <div class="project-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Controller</span></div>
+                </div>
+            </article>
             </div>
-
         </div>
     </div>
 </section>
@@ -823,6 +848,10 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 GitHub
             </a>
+            <a href="https://leetcode.com/u/striderzz/" class="contact-btn" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+                LeetCode
+            </a>
             <a href="Hasan_Resume.pdf" class="contact-btn" target="_blank" rel="noopener">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 Resume
@@ -838,6 +867,6 @@
     </div>
 </footer>
 
-<script src="script.js?v=8"></script>
+<script src="script.js?v=17"></script>
 </body>
 </html>

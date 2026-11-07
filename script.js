@@ -210,7 +210,7 @@
     els.forEach(function (el) {
         if (el.classList.contains('project-card')) {
             var siblings = el.parentElement.querySelectorAll('.project-card');
-            siblings.forEach(function (sib, j) { sib.dataset.delay = j * 60; });
+            siblings.forEach(function (sib, j) { sib.dataset.delay = (j % 3) * 70; });
         }
         observer.observe(el);
     });
@@ -259,3 +259,46 @@
 
 /* full project description on hover, since cards show one line */
 document.querySelectorAll('.project-desc, .project-title').forEach(function (el) { el.title = el.textContent.trim(); });
+
+
+/* ============================================================
+   PROJECT GROUPS, CARD SPOTLIGHT, SCROLL PROGRESS
+   ============================================================ */
+(function () {
+    var groups = document.querySelectorAll('.project-group');
+    document.querySelectorAll('.filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var f = btn.dataset.filter;
+            groups.forEach(function (g) {
+                g.hidden = f !== 'all' && g.dataset.group !== f;
+                if (g.hidden) return;
+                g.querySelectorAll('.reveal').forEach(function (el) { el.style.transitionDelay = '0ms'; el.classList.add('visible'); });
+                g.querySelectorAll('.project-card').forEach(function (c, i) {
+                    c.classList.remove('filter-in'); void c.offsetWidth;
+                    c.style.animationDelay = Math.min(i, 8) * 35 + 'ms';
+                    c.classList.add('filter-in');
+                });
+            });
+        });
+    });
+
+    if (window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('.project-card').forEach(function (c) {
+            c.addEventListener('pointermove', function (e) {
+                var r = c.getBoundingClientRect();
+                c.style.setProperty('--mx', e.clientX - r.left + 'px');
+                c.style.setProperty('--my', e.clientY - r.top + 'px');
+            });
+        });
+    }
+
+    var bar = document.getElementById('scrollProgress'), queued = false;
+    function paint() {
+        queued = false;
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    }
+    window.addEventListener('scroll', function () {
+        if (!queued) { queued = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+}());
