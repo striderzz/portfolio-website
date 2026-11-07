@@ -942,7 +942,7 @@ h3, h4, .group-title, .project-title, .exp-company, .edu-school, .cert-name { fo
 /* ============================================================
    LIGHT + DARK PALETTES
    ============================================================ */
-:root, [data-theme="light"] {
+:root[data-theme="light"], :root:not([data-theme]) {
     color-scheme: light;
     --bg: #f6f7fb; --bg-alt: #eef0f7; --card: #ffffff; --thumb: #e9ecf5;
     --border: rgba(30,35,70,.09); --border-h: rgba(79,70,229,.32);
@@ -1030,7 +1030,7 @@ body { font-size: 1rem; }
 /* ============================================================
    MINIMAL BOLD: neutral light and dark, Barlow, GIMP panels
    ============================================================ */
-:root, [data-theme="light"] {
+:root[data-theme="light"], :root:not([data-theme]) {
     color-scheme: light;
     --bg: #f4f4f5; --bg-alt: #f4f4f5; --card: #ffffff; --thumb: #e4e4e7;
     --border: #e1e1e5; --border-h: #b9b9c0;
@@ -1172,3 +1172,117 @@ body { font-size: 1.06rem; line-height: 1.75; }
 }
 
 .hero-title { font-size: clamp(2.6rem, 1.4rem + 3.4vw, 4.5rem) !important; }
+
+/* ============================================================
+   READABLE TYPE: larger on desktop, still scales by device
+   ============================================================ */
+html { font-size: clamp(.9375rem, .8rem + .42vw, 1.25rem); }
+body { font-size: 1.05rem; }
+.hero-desc { font-size: 1.15rem; }
+.about-text p, .exp-bullets li { font-size: 1.02rem; line-height: 1.75; }
+.nav-links a, .btn, .contact-btn, .btn-primary, [data-theme="light"] .btn-primary, [data-theme="dark"] .btn-primary,
+.filter-btn, .filter-btn:hover, .filter-btn.active, [data-theme="light"] .filter-btn.active { font-size: .86rem; letter-spacing: .12em; }
+.hero-sub-title, .hero-label-text, .project-type, .skill-cat-title, .group-count, .exp-date, .exp-loc, .edu-period { font-size: .84rem; letter-spacing: .12em; }
+.theme-name, .theme-toggle .theme-name { font-size: .82rem; }
+.group-title { font-size: clamp(1.1rem, 1rem + .4vw, 1.35rem); }
+.group-sub { font-size: 1rem; }
+.project-title { font-size: 1.14rem; }
+.project-desc { font-size: .98rem; line-height: 1.5; }
+.tag, .skill-tag, .project-tags .tag { font-size: .84rem; }
+.project-tags { height: 1.9rem; }
+.edu-school { font-size: 1.12rem; }
+.edu-degree { font-size: 1rem; }
+.edu-courses, .edu-gpa { font-size: .92rem; max-width: none; }
+.exp-role { font-size: .95rem; }
+.exp-company { font-size: 1.15rem; }
+.cert-name { font-size: 1rem; }
+.cert-issuer, .cert-verify, .stat-label, .info-k, .info-v, .exp-skills-label { font-size: .86rem; }
+.contact-desc { font-size: 1.05rem; }
+.footer { font-size: .9rem; }
+.projects-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (min-width: 1700px) { .container { max-width: 1500px; } .projects-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+@media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 620px) { .projects-grid { grid-template-columns: minmax(0,1fr); } }
+@media (max-width: 1100px) { .nav-links { gap: 1.25rem; } .nav-links a { font-size: .78rem; letter-spacing: .08em; } }
+
+/* ============================================================
+   MATTE BLACK + CREAM
+   ============================================================ */
+[data-theme="dark"] {
+    --bg: #181817; --bg-alt: #181817; --card: #1f1f1e; --thumb: #232322;
+    --border: #2f2f2d; --border-h: #4c4b47;
+    --primary: #f4efe4; --primary-2: #f4efe4; --primary-bg: rgba(244,239,228,.08);
+    --text: #f4efe4; --text-2: #cdc7ba; --text-3: #a29c90;
+}
+:root[data-theme="light"], :root:not([data-theme]) {
+    --bg: #f6f1e7; --bg-alt: #f6f1e7; --card: #fbf8f1; --thumb: #ece5d7;
+    --border: #e3dccd; --border-h: #bdb4a2;
+    --primary: #1c1c1a; --primary-2: #1c1c1a; --primary-bg: rgba(28,28,26,.06);
+    --text: #1c1c1a; --text-2: #4d4a43; --text-3: #6f6a60;
+}
+[data-theme="dark"] { color-scheme: dark; }
+
+/* ============================================================
+   FLUID SCALE: type, widths and spacing all grow with the screen
+   ============================================================ */
+html { font-size: clamp(1rem, .55rem + .78vw, 1.9rem); }
+.container, .nav-container, .hero-inner { max-width: min(94vw, 70rem); }
+@media (min-width: 1700px) { .container { max-width: min(94vw, 70rem); } }
+.hero-inner { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: clamp(2rem, 5vw, 6rem); align-items: center; }
+.hero-title { font-size: clamp(2.5rem, 5.6vw, 7rem) !important; }
+.hero-title .gradient-text { white-space: nowrap; }
+.hero-photo { width: clamp(150px, 19vw, 30rem); }
+.section-title { font-size: clamp(1.9rem, 3vw, 4rem); }
+.nav-links { gap: clamp(1rem, 1.7vw, 2.5rem); }
+.nav-links a { font-size: .8rem; letter-spacing: .1em; }
+.projects-grid { gap: clamp(1.1rem, 1.8vw, 2.5rem); }
+@media (max-width: 1100px) { .nav-links a { font-size: .76rem; letter-spacing: .06em; } }
+@media (max-width: 900px) { .hero-inner { grid-template-columns: minmax(0,1fr); text-align: center; } .hero-photo-wrap { order: -1; } .hero-cta { justify-content: center; } }
+
+/* ============================================================
+   SHADED TYPE + DEEP CARD SHADOWS
+   ============================================================ */
+[data-theme="dark"] {
+    --shade: #a9a397; --type-1: rgba(0,0,0,.55); --type-2: rgba(0,0,0,.45);
+    --card-shadow: inset 0 1px 0 rgba(244,239,228,.05), 0 2px 4px rgba(0,0,0,.35), 0 14px 28px -10px rgba(0,0,0,.6), 0 34px 60px -24px rgba(0,0,0,.7);
+    --card-shadow-up: inset 0 1px 0 rgba(244,239,228,.08), 0 4px 8px rgba(0,0,0,.4), 0 22px 40px -12px rgba(0,0,0,.7), 0 48px 80px -28px rgba(0,0,0,.8);
+}
+:root[data-theme="light"], :root:not([data-theme]) {
+    --shade: #6d675c; --type-1: rgba(70,58,35,.16); --type-2: rgba(70,58,35,.18);
+    --card-shadow: 0 1px 2px rgba(70,58,35,.08), 0 12px 24px -10px rgba(70,58,35,.2), 0 30px 54px -24px rgba(70,58,35,.26);
+    --card-shadow-up: 0 2px 4px rgba(70,58,35,.1), 0 20px 36px -12px rgba(70,58,35,.28), 0 44px 72px -26px rgba(70,58,35,.34);
+}
+.hero-title, .section-title {
+    background: linear-gradient(180deg, var(--text) 40%, var(--shade) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 1px var(--type-1)) drop-shadow(0 10px 22px var(--type-2));
+}
+.hero-title { animation-fill-mode: backwards; }
+.hero-title .gradient-text {
+    background: linear-gradient(180deg, var(--shade) 30%, var(--text-3) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.group-title, .project-title, .exp-company, .edu-school { text-shadow: 0 1px 2px var(--type-1), 0 4px 12px var(--type-2); }
+.project-card, .skill-category, .info-card { box-shadow: var(--card-shadow); }
+.reveal.visible.project-card:hover, .project-card:hover, .reveal.visible.skill-category:hover { box-shadow: var(--card-shadow-up); }
+.project-thumb img { filter: none; }
+
+/* slightly smaller overall */
+html { font-size: clamp(.94rem, .54rem + .66vw, 1.7rem); }
+
+/* cream theme: crisp solid type, stronger contrast, no muddy shading */
+[data-theme="light"] { --text: #171715; --text-2: #3f3c36; --text-3: #5c574e; --border: #ddd5c5; --border-h: #a9a08d; }
+[data-theme="light"] .hero-title, [data-theme="light"] .section-title {
+    background: none; color: var(--text); -webkit-text-fill-color: currentColor; filter: none;
+}
+[data-theme="light"] .hero-title .gradient-text { background: none; color: #6a6459; -webkit-text-fill-color: currentColor; }
+[data-theme="light"] .group-title, [data-theme="light"] .project-title, [data-theme="light"] .exp-company, [data-theme="light"] .edu-school { text-shadow: none; }
+[data-theme="light"] .project-type, [data-theme="light"] .hero-label-text, [data-theme="light"] .skill-cat-title, [data-theme="light"] .hero-sub-title { color: var(--text-2); }
+[data-theme="light"] .tag, [data-theme="light"] .skill-tag { color: var(--text-2); background: rgba(255,253,248,.6); }
+[data-theme="light"] #neuralCanvas { opacity: .1; }
+
+button, input, select, textarea { font-family: inherit; }
+
+/* university badges are themed images from GIMP */
+.edu-logo { background: none; padding: 0; border-radius: 50%; box-shadow: 0 0 0 1px var(--border), var(--card-shadow); overflow: hidden; }
+.edu-logo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }

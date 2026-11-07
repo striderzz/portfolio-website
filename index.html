@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasan Mohd. Hussain — Portfolio</title>
+    <title>Hasan Md. Hussain — Portfolio</title>
     <script>
         (function(){var t=localStorage.getItem('theme')||'dark';if(['light','dark'].indexOf(t)<0)t='dark';document.documentElement.dataset.theme=t;})();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=42">
+    <link rel="stylesheet" href="styles.css?v=50">
 </head>
 <body>
 <div id="scrollProgress" aria-hidden="true"></div>
@@ -50,7 +50,7 @@
                 <span class="badge-dot"></span>
                 <span class="hero-label-text">Open to full-time roles</span>
             </div>
-            <h1 class="hero-title">Hasan<br><span class="gradient-text">Mohd. Hussain</span></h1>
+            <h1 class="hero-title">Hasan<br><span class="gradient-text">Md. Hussain</span></h1>
             <p class="hero-sub-title">Machine Learning Engineer | LLM &amp; Generative AI Systems</p>
             <p class="hero-desc">ML Engineer with an M.S. in Computer Engineering from UT Dallas. I build agentic AI systems, RAG pipelines, and production-ready LLM applications using LangChain, LangGraph, and PyTorch.</p>
             <div class="hero-cta">
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="hero-photo-wrap">
-            <img src="assets/profile.jpg" alt="Hasan Mohd. Hussain" class="hero-photo">
+            <img src="assets/profile.jpg" alt="Hasan Md. Hussain" class="hero-photo">
         </div>
     </div>
     <div class="hero-scroll">
@@ -254,7 +254,7 @@
         </div>
         <div class="edu-list">
             <div class="edu-item reveal">
-                <span class="edu-logo"><img src="assets/education/utd.webp" alt="University of Texas at Dallas logo" width="64" height="64" loading="lazy"></span>
+                <span class="edu-logo"><img class="only-dark" src="assets/education/utd-dark.webp" alt="University of Texas at Dallas logo" width="64" height="64" loading="lazy"><img class="only-light" src="assets/education/utd-light.webp" alt="University of Texas at Dallas logo" width="64" height="64" loading="lazy"></span>
                 <div>
                     <div class="edu-school">University of Texas at Dallas</div>
                     <div class="edu-degree">M.S. Computer Engineering</div>
@@ -266,7 +266,7 @@
                 </div>
             </div>
             <div class="edu-item reveal">
-                <span class="edu-logo"><img src="assets/education/mumbai.webp" alt="University of Mumbai logo" width="64" height="64" loading="lazy"></span>
+                <span class="edu-logo"><img class="only-dark" src="assets/education/mumbai-dark.webp" alt="University of Mumbai logo" width="64" height="64" loading="lazy"><img class="only-light" src="assets/education/mumbai-light.webp" alt="University of Mumbai logo" width="64" height="64" loading="lazy"></span>
                 <div>
                     <div class="edu-school">University of Mumbai</div>
                     <div class="edu-degree">B.E. Computer Engineering</div>
@@ -383,7 +383,7 @@
                     </div>
                     <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/jobquest-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/jobquest-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">JobQuest.AI</span></h4>
                     <div class="project-desc">Desktop AI job-hunt co-pilot: ranks entry-level jobs from 140+ boards against your resume, with a 10-provider LLM layer, application tracker and analytics dashboard, cover letters, a cold-email desk that reads screenshots, and review-first Gmail sync. Ships as a Windows installer.</div>
-                    <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">LLM Agents</span><span class="tag">Multi-LLM</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">PyInstaller</span></div>
+                    <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">LLM Agents</span><span class="tag">Multi-LLM</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">PyInstaller</span></div>
                 </div>
             </article>
             <article class="project-card reveal has-image" data-category="genai">
@@ -574,8 +574,51 @@
         </div>
 
         <div class="project-group" data-group="software">
-            <div class="group-head reveal"><img class="only-dark group-icon" src="assets/icons/cat-software-dark.webp" alt="" width="36" height="36" loading="lazy"><img class="only-light group-icon" src="assets/icons/cat-software-light.webp" alt="" width="36" height="36" loading="lazy"><h3 class="group-title">Software Engineering</h3><span class="group-sub">Full-stack apps and cloud deployments</span><span class="group-count">8</span></div>
+            <div class="group-head reveal"><img class="only-dark group-icon" src="assets/icons/cat-software-dark.webp" alt="" width="36" height="36" loading="lazy"><img class="only-light group-icon" src="assets/icons/cat-software-light.webp" alt="" width="36" height="36" loading="lazy"><h3 class="group-title">Software Engineering</h3><span class="group-sub">Full-stack apps and cloud deployments</span><span class="group-count">13</span></div>
             <div class="projects-grid">
+            <article class="project-card reveal has-image" data-category="software">
+                <div class="project-thumb"><img class="only-dark" src="assets/covers/jobquest-dark.webp" alt="JobQuest.AI cover" width="960" height="600" loading="lazy" decoding="async"><img class="only-light" src="assets/covers/jobquest-light.webp" alt="JobQuest.AI cover" width="960" height="600" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/JobQuest.AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a>
+                        <a href="https://github.com/striderzz/JobQuest.AI/releases/latest" class="project-link" target="_blank" rel="noopener" aria-label="Download installer">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/jobquest-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/jobquest-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">JobQuest.AI</span></h4>
+                    <div class="project-desc">Desktop AI job-hunt co-pilot: ranks entry-level jobs from 140+ boards against your resume, with a 10-provider LLM layer, application tracker and analytics dashboard, cover letters, a cold-email desk that reads screenshots, and review-first Gmail sync. Ships as a Windows installer.</div>
+                    <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">LLM Agents</span><span class="tag">Multi-LLM</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">PyInstaller</span></div>
+                </div>
+            </article>
+            <article class="project-card reveal has-image" data-category="software">
+                <div class="project-thumb"><img class="only-dark" src="assets/covers/nutricoach-dark.webp" alt="NutriCoach.AI cover" width="960" height="600" loading="lazy" decoding="async"><img class="only-light" src="assets/covers/nutricoach-light.webp" alt="NutriCoach.AI cover" width="960" height="600" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/NutriCoach.AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></span>
+                    </div>
+                    <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/nutricoach-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/nutricoach-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">NutriCoach.AI</span></h4>
+                    <div class="project-desc">Seven LangGraph ReAct agents turn a profile into calorie targets, a meal week and a training plan, streamed live over SSE. Works with any LLM provider or fully offline.</div>
+                    <div class="project-tags"><span class="tag">LangGraph</span><span class="tag">Multi-Agent</span><span class="tag">Flask SSE</span><span class="tag">Multi-LLM</span></div>
+                </div>
+            </article>
+            <article class="project-card has-image reveal" data-category="software">
+                <div class="project-thumb"><img class="only-dark" src="assets/covers/finance-dark.webp" alt="AI Finance Tracker cover" width="960" height="600" loading="lazy" decoding="async"><img class="only-light" src="assets/covers/finance-light.webp" alt="AI Finance Tracker cover" width="960" height="600" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Finance-Tracker-App-AI" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/finance-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/finance-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">AI Finance Tracker</span></h4>
+                    <div class="project-desc">Full-stack expense tracking app with budget management, charts, database views, and AI-generated financial insights and recommendations.</div>
+                    <div class="project-tags"><span class="tag">Flask</span><span class="tag">OpenAI</span><span class="tag">PostgreSQL</span><span class="tag">Charts</span></div>
+                </div>
+            </article>
             <article class="project-card reveal has-image" data-category="software">
                 <div class="project-thumb"><img class="only-dark" src="assets/covers/recipe-dark.webp" alt="Recipe Manager cover" width="960" height="600" loading="lazy" decoding="async"><img class="only-light" src="assets/covers/recipe-light.webp" alt="Recipe Manager cover" width="960" height="600" loading="lazy" decoding="async"></div>
                 <div class="project-body">
@@ -678,6 +721,34 @@
                     <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/sorter-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/sorter-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">File Sorter</span></h4>
                     <div class="project-desc">Offline file sorter with a CLI and Tkinter GUI that sorts files into category folders by extension.</div>
                     <div class="project-tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">CLI</span></div>
+                </div>
+            </article>
+            <article class="project-card has-image reveal" data-category="software">
+                <div class="project-thumb"><img class="only-dark" src="assets/covers/cnn-dark.webp" alt="CNN Image Classifier cover" width="960" height="600" loading="lazy" decoding="async"><img class="only-light" src="assets/covers/cnn-light.webp" alt="CNN Image Classifier cover" width="960" height="600" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/CNN_Image_Classification_MNIST" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/cnn-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/cnn-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">CNN Image Classifier</span></h4>
+                    <div class="project-desc">Single-page Flask app serving a TinyVGG-style CNN to classify FashionMNIST, with live metrics for dataset sizes, params, and accuracy plus a compact training script.</div>
+                    <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">TinyVGG</span><span class="tag">Flask</span><span class="tag">FashionMNIST</span></div>
+                </div>
+            </article>
+            <article class="project-card has-image reveal" data-category="software">
+                <div class="project-thumb"><img class="only-dark" src="assets/covers/car-dark.webp" alt="Car Price Prediction cover" width="960" height="600" loading="lazy" decoding="async"><img class="only-light" src="assets/covers/car-light.webp" alt="Car Price Prediction cover" width="960" height="600" loading="lazy" decoding="async"></div>
+                <div class="project-body">
+                    <div class="project-meta">
+                        <span class="project-type">Software</span>
+                        <span class="project-links"><a href="https://github.com/striderzz/Car-Price-Prediction-ML-Flask-Webapp" class="project-link" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </a></span>
+                    </div>
+                    <h4 class="project-title"><img class="only-dark project-icon" src="assets/icons/car-dark.webp" alt="" width="32" height="32" loading="lazy"><img class="only-light project-icon" src="assets/icons/car-light.webp" alt="" width="32" height="32" loading="lazy"><span class="project-title-text">Car Price Prediction</span></h4>
+                    <div class="project-desc">Linear Regression model deployed as a Flask web app for real-time car price prediction. R² score 0.85. Users input car features and get instant estimates.</div>
+                    <div class="project-tags"><span class="tag">Scikit-learn</span><span class="tag">Flask</span><span class="tag">Regression</span><span class="tag">Python</span></div>
                 </div>
             </article>
             </div>
@@ -873,7 +944,7 @@
 <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
 <footer class="footer">
     <div class="container">
-        hasan mohd. hussain · <a href="https://github.com/striderzz" style="color:var(--primary);text-decoration:none;">@striderzz</a> · mumbai, india
+        hasan md. hussain · <a href="https://github.com/striderzz" style="color:var(--primary);text-decoration:none;">@striderzz</a> · mumbai, india
     </div>
 </footer>
 
